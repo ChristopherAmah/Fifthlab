@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 import ndpr from "../assets/ndpr.png";
 import darklogo from "../assets/darklogo.png";
@@ -25,7 +26,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex gap-4 mt-6 text-xl text-[#FFFFFF]">
             <FaFacebookF />
-            <FaTwitter />
+            <FaXTwitter />
             <FaInstagram />
             <FaLinkedinIn />
           </div>
