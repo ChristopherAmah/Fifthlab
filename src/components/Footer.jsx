@@ -1,6 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 import ndpr from "../assets/ndpr.png";
 import darklogo from "../assets/darklogo.png";
@@ -25,17 +23,16 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex gap-4 mt-6 text-xl text-[#FFFFFF]">
-            <FaFacebookF />
-            <FaXTwitter />
-            <FaInstagram />
-            <FaLinkedinIn />
+            <Facebook size={20} />
+            <Twitter size={20} />
+            <Instagram size={20} />
+            <Linkedin size={20} />
           </div>
 
-
           {/* NDPR Badge */}
-          <img 
-            src={ndpr} 
-            alt="NDPR Audit" 
+          <img
+            src={ndpr}
+            alt="NDPR Audit"
             className="h-[111px] mt-6"
           />
         </div>
@@ -93,7 +90,6 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between font-normal text-[#6F6C90] text-[18px]">
-        
         <p>Copyright © 2024 Fifthlab</p>
 
         <p className="mt-3 md:mt-0">
