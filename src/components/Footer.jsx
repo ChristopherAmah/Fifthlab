@@ -94,7 +94,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="flex flex-col md:flex-row justify-between font-normal text-[#6F6C90] text-[18px]">
         
-        <p classn>Copyright © 2024 Fifthlab</p>
+        <p>Copyright © 2024 Fifthlab</p>
 
         <p className="mt-3 md:mt-0">
           All Rights Reserved | 
