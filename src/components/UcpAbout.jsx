@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
 
 import kul1 from "../assets/kul1.jpg";
-import kul2 from "../assets/kul2.png";
-import kul3 from "../assets/kul3.jpg";
-import kul4 from "../assets/kul4.jpg";
+import kul2 from "../assets/ucp2.jpg";
+import kul3 from "../assets/ucp3.jpg";
+import kul4 from "../assets/ucp4.jpg";
 
 const sections = [
   {
-    title: "Buyer & seller security",
-    text: "Buyers and sellers are protected with funds held in a third party escrow. Payments are released only after orders are fulfilled.",
+    title: "Member",
+    text: "UCP keeps accurate records of the members, with ease of retrieval at any point in time.",
     img: kul1,
   },
   {
-    title: "Financing opportunities",
-    text: "We provide financing options for our buyers and sellers on our own net terms while increasing their cash flow.",
+    title: "Contribution Management",
+    text: "UCP allows cooperative members to pay and view their contribution in real-time.",
     img: kul2,
   },
   {
-    title: "Partnership Opportunities",
-    text: "Grow your business and earn more by partnering with KuleanPay. Our world-class API lets you accept secure payments in just a few lines of code.",
+    title: "Finding Opportunities",
+    text: "Cooperative societies and cooperators can now have access to grants and loans.",
     img: kul3,
   },
   {
-    title: "Track Transactions",
-    text: "Track your transaction every step of the way. Your money will be held securely until you’re satisfied with the services you received.",
+    title: "Report Generation",
+    text: "Cooperatives registered on the platform can spool management information",
     img: kul4,
   },
 ];
@@ -67,11 +67,11 @@ const KuleanPayScroll = () => {
       {!isMobile ? (
         <div
           id="scroll-wrapper"
-          className="max-w-7xl mx-auto grid grid-cols-2 gap-10 px-4"
-          style={{ minHeight: "100vh" }}
+          className="mx-auto grid grid-cols-2 gap-10 px-6 md:px-16 lg:px-32 relative"
+          style={{ minHeight: `${sections.length * 100}vh` }} // Enough height for scroll
         >
           {/* LEFT IMAGE */}
-          <div className="sticky top-24 h-[100vh] rounded-[20px] overflow-hidden">
+          <div className="sticky top-24 h-[80vh] rounded-[20px] overflow-hidden">
             <img
               src={sections[currentIndex].img}
               alt="scroll-img"
@@ -79,67 +79,68 @@ const KuleanPayScroll = () => {
             />
           </div>
 
-          {/* RIGHT SIDE (Heading + Scrolling Sections) */}
-          <div className="relative flex flex-col space-y-2">
-            
-            {/* --- FIXED HEADING (Not affected by scroll) --- */}
-            <h1 className="text-3xl md:text-[42px] font-medium text-[#03045E] leading-tight mb-10">
-              Fast, Seamless Daily Payments for Individuals and Businesses
-            </h1>
+          {/* RIGHT SIDE */}
+          <div className="relative">
+            <div className="sticky top-24 space-y-6 md:space-y-10">
+              {/* Fixed Heading */}
+              <h1 className="text-2xl sm:text-3xl md:text-[42px] font-medium text-[#03045E] leading-snug md:leading-tight mb-6 md:mb-10">
+                A Unified Suite Built to Run & Manage Cooperatives
+              </h1>
 
-            {/* SCROLL-SYNC ITEMS */}
-            <div className="flex flex-col sticky top-24 space-y-20">
-              {sections.map((sec, idx) => (
-                <div key={idx} className="flex gap-4 items-start">
-                  {/* Highlight Bar */}
-                  <div
-                    className={`w-1 rounded-[100px] h-20 transition-all duration-500 ${
-                      idx === currentIndex ? "bg-[#222222]" : "bg-gray-300"
-                    }`}
-                  ></div>
+              {/* Scroll-Sync Sections */}
+              <div className="flex flex-col space-y-6 md:space-y-10">
+                {sections.map((sec, idx) => (
+                  <div key={idx} className="flex gap-4 md:gap-5 items-start">
+                    {/* Highlight Bar */}
+                    <div
+                      className={`w-1 rounded-full h-16 md:h-20 transition-all duration-500 ${
+                        idx === currentIndex ? "bg-[#222222]" : "bg-gray-300"
+                      }`}
+                    ></div>
 
-                  {/* Text */}
-                  <div>
-                    <h3
-                      className={`text-[22px] font-medium mb-1 transition-all duration-500 ${
-                        idx === currentIndex
-                          ? "text-[#000000]"
-                          : "text-[#848687] font-medium"
-                      }`}
-                    >
-                      {sec.title}
-                    </h3>
-                    <p
-                      className={`text-[16px] leading-relaxed transition-all duration-500 ${
-                        idx === currentIndex ? "text-[#484A4B]" : "text-[#848687]"
-                      }`}
-                    >
-                      {sec.text}
-                    </p>
+                    {/* Text */}
+                    <div>
+                      <h3
+                        className={`text-lg sm:text-[20px] md:text-[22px] font-medium mb-1 transition-all duration-500 ${
+                          idx === currentIndex
+                            ? "text-[#000000]"
+                            : "text-[#848687]"
+                        }`}
+                      >
+                        {sec.title}
+                      </h3>
+                      <p
+                        className={`text-sm sm:text-[15px] md:text-[16px] leading-relaxed transition-all duration-500 ${
+                          idx === currentIndex ? "text-[#484A4B]" : "text-[#848687]"
+                        }`}
+                      >
+                        {sec.text}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       ) : (
         /* MOBILE VIEW */
-        <div className="flex flex-col gap-10 px-4 max-w-xl mx-auto">
-          <h1 className="text-3xl font-semibold text-[#03045E] leading-tight mb-6">
+        <div className="flex flex-col gap-8 px-4 sm:px-6 max-w-xl mx-auto">
+          <h1 className="text-2xl sm:text-3xl font-semibold text-[#03045E] leading-snug mb-4">
             Fast, Seamless Daily Payments for Individuals and Businesses
           </h1>
 
           {sections.map((sec, i) => (
-            <div key={i} className="flex flex-col">
+            <div key={i} className="flex flex-col gap-2">
               <img
                 src={sec.img}
-                className="w-full h-60 object-cover rounded-xl mb-4"
+                className="w-full h-52 sm:h-60 object-cover rounded-xl mb-2"
                 alt="mobile-scroll"
               />
-              <h3 className="text-lg font-semibold text-[#03045E] mb-1">
+              <h3 className="text-lg sm:text-xl font-semibold text-[#03045E]">
                 {sec.title}
               </h3>
-              <p className="text-gray-700 text-sm">{sec.text}</p>
+              <p className="text-gray-700 text-sm sm:text-base">{sec.text}</p>
             </div>
           ))}
         </div>

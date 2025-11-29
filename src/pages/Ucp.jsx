@@ -6,7 +6,7 @@ import background from '../assets/background.png'
 
 const Ucp = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative">
       {/* Faint repeating background */}
       <div
         className="absolute inset-0 w-full h-full opacity-5"

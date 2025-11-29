@@ -6,10 +6,10 @@ import background from '../assets/background.png'
 
 const Kuleanpay = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative">
       {/* Faint repeating background */}
       <div
-        className="absolute inset-0 w-full h-full opacity-5"
+        className="fixed inset-0 w-full h-full opacity-5 pointer-events-none"
         style={{
           backgroundImage: `url(${background})`,
           backgroundRepeat: 'repeat',
@@ -29,17 +29,17 @@ const Kuleanpay = () => {
       <style jsx>{`
         @media (max-width: 640px) {
           div[style] {
-            background-size: 80px 80px;
+            background-size: 80px 80px !important;
           }
         }
         @media (min-width: 641px) and (max-width: 1024px) {
           div[style] {
-            background-size: 120px 120px;
+            background-size: 120px 120px !important;
           }
         }
         @media (min-width: 1025px) {
           div[style] {
-            background-size: 160px 160px;
+            background-size: 160px 160px !important;
           }
         }
       `}</style>
