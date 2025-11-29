@@ -7,8 +7,6 @@ import wema from '../assets/wema.png';
 import stanbic from '../assets/stanbic.png';
 import itex from '../assets/itex.png';
 import firstbank from '../assets/firstbank.png';
-
-// IMPORT YOUR BACKGROUND IMAGE
 import morebg from '../assets/morebg.png';
 
 const ImpactSection = () => {
@@ -25,39 +23,48 @@ const ImpactSection = () => {
 
   return (
     <div
-      className="
-        pb-12 min-h-screen
-        bg-cover bg-center bg-no-repeat
-        relative
-      "
-      style={{ backgroundImage: `url(${morebg})` }} // ⭐ This is the correct way
+      className="pb-8 sm:pb-12 bg-cover bg-center bg-no-repeat relative"
+      style={{ backgroundImage: `url(${morebg})` }}
     >
-      {/* CONTENT */}
       <div className="relative z-10">
-        
+
         {/* Logos */}
-        <div className="flex flex-wrap items-center bg-[#EDEDEDB2] gap-x-10 gap-y-4 mb-16 sm:mb-20 justify-center">
+        <div className="flex flex-wrap items-center bg-[#EDEDEDB2] gap-x-10 gap-y-4 mb-4 justify-center">
           {logos.map((logo, index) => (
-            <div key={index} className="h-2 max-w-25 flex items-center py-12">
-              <img src={logo.src} alt={logo.alt} className="w-full h-auto object-contain" />
+            <div
+              key={index}
+              className="h-10 flex items-center py-12"
+              // Smaller screens adjustments
+              style={{ minWidth: '3rem' }}
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                className="w-20 h-10 object-contain sm:w-25"
+              />
             </div>
           ))}
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 px-[84.97px] ">
-          
+        <div className="grid grid-cols-1 lg:grid-cols-2 px-8 sm:px-[84.97px] pb-[51.1px] gap-y-[28.56px]">
+
           {/* Left Column */}
           <div className="flex flex-col justify-start py-6">
-            <h1 className="text-7xl sm:text-[121.44px] font-medium text-black">
+            <h1
+              className="text-5xl font-medium text-black sm:text-[121.44px]"
+              style={{ lineHeight: 1.1 }}
+            >
               Be<br />more
             </h1>
           </div>
 
           {/* Top Right Box */}
           <div>
-            <div className="bg-[#0090AD] text-white px-8 sm:px-[56.92px] py-5 rounded-[66.42px] h-full">
-              <p className="text-xl sm:text-[38px] font-normal max-w-5xl">
+            <div className="bg-[#0090AD] text-white rounded-[66.42px] h-full">
+              <p
+                className="text-base text-center font-normal py-8 px-6 sm:text-[32px] sm:py-12 sm:px-12"
+              >
                 Live your best life, create more and multiply your impact with the tools and solutions we provide.
               </p>
             </div>
@@ -65,16 +72,20 @@ const ImpactSection = () => {
 
           {/* Bottom Left Box */}
           <div>
-            <div className="bg-[#E6F8FB] text-[#121212] p-8 sm:p-10 sm:px-[56.92px] rounded-[66.42px] relative h-full">
-              <p className="text-[32px] font-normal">
+            <div className="bg-[#E6F8FB] text-[#121212] rounded-[66.42px] relative h-full">
+              <p
+                className="text-base text-center font-normal py-8 px-6 sm:text-[26px] sm:py-12 sm:px-12"
+              >
                 The reward for a great idea is the tools to make it happen. We provide you with financial and operational tools that help you do business differently and with ease.
               </p>
             </div>
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col justify-end items-end lg:pl-10 mt-10 lg:mt-0">
-            <h1 className="text-7xl sm:text-[133.61px] font-medium text-[#000000]">
+          <div className="flex flex-col justify-end items-end">
+            <h1
+              className="text-5xl font-medium text-[#000000] leading-none sm:text-[133.61px]"
+            >
               Do<br /><span className="text-[#15949B]">more</span>
             </h1>
           </div>

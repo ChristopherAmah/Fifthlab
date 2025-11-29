@@ -21,28 +21,23 @@ export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-white text-center overflow-hidden px-4">
       
-      {/* Rotating top semicircle */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full flex justify-center items-start z-0 mt-4">
-        <div className="relative w-full h-full">
-          {images.map((img, index) => (
+      {/* Continuous Horizontal Slider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden py-8">
+        <div className="flex animate-marquee gap-8">
+          {/* Duplicate the array to create a seamless loop */}
+          {[...images, ...images].map((img, index) => (
             <img
               key={index}
               src={img}
               alt={`hero-${index}`}
-              className="absolute w-70 h-auto top-0 left-1/2 transform -translate-x-1/2 animate-rotate"
-              style={{
-                transformOrigin: '50% 700px', // ⬅️ increased radius (more middle space)
-                rotate: `${index * (360 / images.length)}deg`,
-                marginRight: '5px', // ⬅️ spacing between images
-                marginBottom: '40px', // ⬅️ vertical spacing
-              }}
+              className="w-44 sm:w-52 md:w-60 lg:w-72 h-auto object-contain"
             />
           ))}
         </div>
       </div>
 
       {/* Hero text content */}
-      <div className="relative z-10 max-w-4xl mx-auto mt-70">
+      <div className="relative z-10 max-w-4xl mx-auto mt-52 sm:mt-64 md:mt-72">
         <h1 className="text-4xl md:text-[62px] font-medium text-[#0E0E0E] mb-6">
           Building the Future of <br className="hidden sm:inline" /> Integrated Solutions.
         </h1>
@@ -59,14 +54,15 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Tailwind animation for rotation */}
+      {/* Tailwind animation for horizontal marquee */}
       <style jsx>{`
-        @keyframes rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); } /* Move by half because we duplicated images */
         }
-        .animate-rotate {
-          animation: rotate 20s linear infinite;
+        .animate-marquee {
+          display: flex;
+          animation: marquee 25s linear infinite;
         }
       `}</style>
     </section>

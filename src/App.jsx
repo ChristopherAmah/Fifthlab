@@ -8,8 +8,10 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Kuleanpay from "./pages/Kuleanpay";
 import Finedge from "./pages/Finedge";
+import Ucp from "./pages/Ucp";
 import Getintouch from "./pages/Getintouch";
 import Insights from "./pages/Insights";
+import Bulkwave from "./pages/Bulkwave";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/insights" element={<Insights />} />
         <Route path="/kuleanpay" element={<Kuleanpay />} />
         <Route path="/finedge" element={<Finedge />} />
+        <Route path="/ucp" element={<Ucp />} />
+        <Route path="/bulkwave" element={<Bulkwave />} />
       </Routes>
       
       <Community />
