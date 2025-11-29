@@ -1,10 +1,10 @@
 import React from 'react'
-import KuleanpaySection from '../components/KuleanpayHero'
-import KuleanpayAbout from '../components/KuleanpayAbout'
-import KuleanpayWorks from '../components/KuleanpayWorks'
+import BeetvasSection from '../components/BeetvasHero'
+import BeetvasAbout from '../components/BeetvasAbout'
+import BeetvasWorks from '../components/BeetvasWorks'
 import background from '../assets/background.png'
 
-const Kuleanpay = () => {
+const Beetvas = () => {
   return (
     <div className="relative">
       {/* Faint repeating background */}
@@ -20,9 +20,9 @@ const Kuleanpay = () => {
 
       {/* Page Content */}
       <div className="relative z-10">
-        <KuleanpaySection />
-        <KuleanpayAbout />
-        <KuleanpayWorks />
+        <BeetvasSection />
+        <BeetvasAbout />
+        <BeetvasWorks />
       </div>
 
       {/* Responsive background scaling */}
@@ -47,4 +47,4 @@ const Kuleanpay = () => {
   )
 }
 
-export default Kuleanpay
+export default Beetvas

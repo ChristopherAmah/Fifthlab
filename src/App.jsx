@@ -12,6 +12,9 @@ import Ucp from "./pages/Ucp";
 import Getintouch from "./pages/Getintouch";
 import Insights from "./pages/Insights";
 import Bulkwave from "./pages/Bulkwave";
+import Smerp from "./pages/Smerp";
+import Smerpgo from "./pages/Smerpgo";
+import Beetvas from "./pages/Beetvas";
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         <Route path="/finedge" element={<Finedge />} />
         <Route path="/ucp" element={<Ucp />} />
         <Route path="/bulkwave" element={<Bulkwave />} />
+        <Route path="/smerp" element={<Smerp />} />
+        <Route path="/smerpgo" element={<Smerpgo />} />
+        <Route path="/beetvas" element={<Beetvas />} />
       </Routes>
       
       <Community />

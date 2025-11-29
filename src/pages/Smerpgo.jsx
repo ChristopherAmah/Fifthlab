@@ -1,10 +1,10 @@
 import React from 'react'
-import KuleanpaySection from '../components/KuleanpayHero'
-import KuleanpayAbout from '../components/KuleanpayAbout'
-import KuleanpayWorks from '../components/KuleanpayWorks'
+import SmerpgoSection from '../components/SmerpgoHero'
+import SmerpgoAbout from '../components/SmerpgoAbout'
+import SmerpgoWorks from '../components/SmerpgoWorks'
 import background from '../assets/background.png'
 
-const Kuleanpay = () => {
+const Smerpgo = () => {
   return (
     <div className="relative">
       {/* Faint repeating background */}
@@ -20,9 +20,9 @@ const Kuleanpay = () => {
 
       {/* Page Content */}
       <div className="relative z-10">
-        <KuleanpaySection />
-        <KuleanpayAbout />
-        <KuleanpayWorks />
+        <SmerpgoSection />
+        <SmerpgoAbout />
+        <SmerpgoWorks />
       </div>
 
       {/* Responsive background scaling */}
@@ -47,4 +47,4 @@ const Kuleanpay = () => {
   )
 }
 
-export default Kuleanpay
+export default Smerpgo
