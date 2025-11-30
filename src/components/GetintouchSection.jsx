@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import background from "../assets/background.png";
+import { CiCircleCheck } from "react-icons/ci";
 
 const EnquiryForm = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setShowPopup(true);
+  };
+
   return (
     <section className="relative min-h-screen px-4 pt-24 sm:pt-32 pb-10 overflow-hidden">
       {/* Background Image */}
@@ -27,7 +35,7 @@ const EnquiryForm = () => {
           based on a final draft to be decided by the content team.
         </p>
 
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           {/* Row 1 */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
@@ -142,23 +150,57 @@ const EnquiryForm = () => {
           <p className="text-[12px] sm:text-[14px] text-[#596780] mt-2 text-center px-1 sm:px-0">
             By clicking the submit button above, it means you've read and agreed
             to the{" "}
-            <a
-              href="#"
-              className="text-blue-500 hover:text-blue-600 font-semibold"
-            >
+            <a href="#" className="text-blue-500 hover:text-blue-600 font-semibold">
               Terms & Conditions
             </a>{" "}
             and the{" "}
-            <a
-              href="#"
-              className="text-blue-500 hover:text-blue-600 font-semibold"
-            >
+            <a href="#" className="text-blue-500 hover:text-blue-600 font-semibold">
               Privacy Policy
             </a>{" "}
             of Fifthlab
           </p>
         </form>
       </div>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-4">
+          <div className="bg-white w-full max-w-md rounded-3xl p-6 relative text-center shadow-lg">
+            
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPopup(false)}
+              className="absolute top-4 right-4 text-gray-600 text-xl"
+            >
+              ✕
+            </button>
+
+            {/* Green Check Icon */}
+            <div className="flex justify-start mb-4">
+              <div className="w-14 h-14 rounded-full bg-[#D1FADF] flex items-center justify-center">
+                <span className="text-[#039855] text-3xl"><CiCircleCheck /></span>
+              </div>
+            </div>
+
+            <h2 className="text-[24px] font-semibold text-[#181D27] mb-1 text-start">
+              Thank You for Your Enquiry!
+            </h2>
+
+            <p className="text-[#73788C] text-[17.11px] mb-6  text-start">
+              We’ve received your request and our team will get back to you shortly. 
+              We’re excited to assist you with all the details!
+            </p>
+
+            {/* Return to Homepage */}
+            <a
+              href="/"
+              className="block w-full bg-[#010101] text-white py-3 rounded-[100000px] font-medium text-[19.56px]"
+            >
+              Return to Homepage
+            </a>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

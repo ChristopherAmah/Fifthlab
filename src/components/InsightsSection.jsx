@@ -1,5 +1,6 @@
 import React from 'react';
 import insights from '../assets/insights.jpg'; 
+import { Link } from 'react-router-dom';
 
 // --- Categories ---
 const categories = ["All", "Fintech", "Ecommerce", "Banking", "Networking", "Others"];
@@ -174,9 +175,11 @@ const InsightsSection = () => {
                   {/* <span className="block font-medium">{post.titleSub}</span> */}
                 </h3>
 
+                <Link to='/article'>
                 <button className="bg-white text-[#000000] text-[11.93px] font-medium rounded-[7.74px] px-4 py-2 w-max">
                   View Post
                 </button>
+                </Link>
               </div>
             </div>
           ))}

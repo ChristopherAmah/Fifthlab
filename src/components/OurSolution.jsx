@@ -47,7 +47,7 @@ const SolutionCard = ({
             <div
               className={`relative overflow-hidden max-w-full mx-auto
                 ${title === "Unified Cooperative Platform (UCP)"
-                  ? "h-[350px] sm:h-[520px] lg:h-[300px]"
+                  ? "h-[350px] sm:h-[520px] lg:h-[400px]"
                   : "h-[180px] sm:h-[250px] lg:h-[400px]"}`}
             >
               {showTopHalf ? (
@@ -74,7 +74,7 @@ const SolutionCard = ({
         </>
       ) : (
         <>
-          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[300px] mb-4 sm:mb-6 max-w-full mx-auto">
+          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[450px] mb-4 sm:mb-6 max-w-xs mx-auto">
             {showTopHalf ? (
               <img src={mockupImage} alt={mockupAlt} className="w-full h-auto object-cover object-top rounded-xl"/>
             ) : (
@@ -181,7 +181,7 @@ const SolutionsSection = () => {
           />
           <SolutionCard
             logo={ucplogo}
-            mockupImage={kuleanpayphone}
+            mockupImage={ucpphone}
             title="Unified Cooperative Platform (UCP)"
             description="Designed for cooperatives, UCP streamlines cash collection, disbursement, and reconciliation."
             buttonText="Read More"

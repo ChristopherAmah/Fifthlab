@@ -15,6 +15,7 @@ import Bulkwave from "./pages/Bulkwave";
 import Smerp from "./pages/Smerp";
 import Smerpgo from "./pages/Smerpgo";
 import Beetvas from "./pages/Beetvas";
+import ArticlePage from "./pages/ArticlePage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/smerp" element={<Smerp />} />
         <Route path="/smerpgo" element={<Smerpgo />} />
         <Route path="/beetvas" element={<Beetvas />} />
+        <Route path="/article" element={<ArticlePage />} />
       </Routes>
       
       <Community />
