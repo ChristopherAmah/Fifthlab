@@ -25,7 +25,7 @@ const executiveTeamData = [
 ];
 
 const productTeamData = [
-  { name: "Tochukwu Mgbemena", title: "Product and Operation Lead", imageSrc: toch },
+  { name: "Tochukwu Mgbemena", title: "Product and Operations Lead", imageSrc: toch },
   { name: "OgheneFego Ogbegiwa", title: "Product Manager", imageSrc: fego },
   { name: "Ayobami Awoyelu", title: "Product Designer", imageSrc: ayobami },
   { name: "Fawwaz Alli-Balogun", title: "Product Designer", imageSrc: fawaz },
