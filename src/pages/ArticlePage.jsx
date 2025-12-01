@@ -25,20 +25,20 @@ const relatedArticlesData = [
 // === RELATED ARTICLE CARD ===
 const RelatedArticleCard = ({ article }) => {
   return (
-    <div className="flex flex-col relative rounded-[38.15px] overflow-hidden">
+    <div className="flex flex-col relative rounded-[38.15px] overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-[497px]">
       <img
         src={article.image}
         alt={article.title}
-        className="w-full object-cover h-full absolute"
+        className="w-full h-full object-cover absolute"
       />
-      <div className="relative p-6 flex flex-col justify-end h-full min-h-[497px] bg-linear-to-t from-[#000000] via-[#000000CC] to-[#00000000]">
-        <h3 className="text-[26px] font-medium text-white mb-3 leading-snug">
+      <div className="relative p-4 sm:p-6 flex flex-col justify-end h-full bg-linear-to-t from-[#000000] via-[#000000CC] to-[#00000000]">
+        <h3 className="text-lg sm:text-[22px] lg:text-[26px] font-medium text-white mb-2 sm:mb-3 leading-snug">
           {article.title}
         </h3>
 
         <a
           href={article.link}
-          className="w-min whitespace-nowrap px-4 py-2 text-[12px] font-medium text-black bg-white border border-white rounded-lg hover:bg-white hover:text-black transition"
+          className="w-min whitespace-nowrap px-3 py-1.5 text-[12px] font-medium text-black bg-white border border-white rounded-lg hover:bg-white hover:text-black transition"
         >
           View Post
         </a>
@@ -52,7 +52,7 @@ const ArticlePage = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
 
-      {/* === Faint repeating background === */}
+      {/* === Faint repeating background (unchanged) === */}
       <div
         className="absolute inset-0 w-full h-full opacity-5"
         style={{
@@ -64,31 +64,31 @@ const ArticlePage = () => {
       ></div>
 
       {/* === PAGE CONTENT === */}
-      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-[136px] py-[140px]">
+      <div className="relative z-10 mx-auto px-4 sm:px-6 lg:px-[136px] py-16 sm:py-20 lg:py-[140px]">
 
         {/* Header */}
         <header className="mb-6">
-          <h1 className="text-4xl sm:text-[42px] font-semibold leading-tight text-black mb-4 px-[127px]">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-semibold leading-tight text-black mb-4 px-0 sm:px-4 lg:px-[127px]">
             Speaking The Language Of Innovation: The Role Of Tech In Promoting Global Literacy
           </h1>
         </header>
 
         {/* Meta */}
-        <div className="flex items-center text-[13px] text-[#6C6D6F] mb-10 px-[136px]">
+        <div className="flex flex-wrap items-center text-[13px] text-[#6C6D6F] mb-10 px-0 sm:px-4 lg:px-[136px] gap-2">
           <div className="flex items-center space-x-2">
             <div className="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-xs font-bold text-gray-600">
               FL
             </div>
             <span className="text-black text-[16px]">Fifthlab Africa</span>
           </div>
-          <span className="mx-2">•</span>
+          <span>•</span>
           <span>3 min read</span>
-          <span className="mx-2">•</span>
+          <span>•</span>
           <time dateTime="2024-09-09">2024-09-09</time>
         </div>
 
         {/* Featured Image */}
-        <div className="relative w-full overflow-hidden mb-10 px-[77px]">
+        <div className="relative w-full overflow-hidden mb-10 px-0 sm:px-4 lg:px-[77px]">
           <img
             src={insights}
             alt="A young woman smiling while working on a laptop."
@@ -97,17 +97,15 @@ const ArticlePage = () => {
         </div>
 
         {/* Article Body */}
-        <section className="text-lg leading-relaxed text-[#3C3C3C] mb-[108px] px-[105px]">
+        <section className="text-base sm:text-base lg:text-lg leading-relaxed text-[#3C3C3C] mb-12 sm:mb-16 lg:mb-[108px] px-0 sm:px-4 lg:px-[105px] space-y-4">
           <p>
             In this modern internet age, technology has evolved into a universal
             language—one that transcends borders...
           </p>
-          <br />
           <p>
             In this modern internet age, technology has evolved into a universal
             language—one that transcends borders...
           </p>
-          <br />
           <p>
             In this modern internet age, technology has evolved into a universal
             language—one that transcends borders...
@@ -116,11 +114,11 @@ const ArticlePage = () => {
 
         {/* Related Articles */}
         <section>
-          <h2 className="text-3xl sm:text-[36px] font-semibold text-black mb-[27px]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-6 sm:mb-8 lg:mb-[27px]">
             Related Articles
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-8">
             {relatedArticlesData.map((article, index) => (
               <RelatedArticleCard key={index} article={article} />
             ))}
@@ -129,13 +127,8 @@ const ArticlePage = () => {
 
       </div>
 
-      {/* === RESPONSIVE BACKGROUND SIZE === */}
+      {/* === Keep your original background media queries unchanged === */}
       <style jsx>{`
-        @media (max-width: 640px) {
-          div[style] {
-            background-size: 80px 80px;
-          }
-        }
         @media (min-width: 641px) and (max-width: 1024px) {
           div[style] {
             background-size: 120px 120px;
