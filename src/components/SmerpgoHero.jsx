@@ -1,6 +1,6 @@
 import React from 'react';
-import Smerpgologo from '../assets/Smerpgologo.png';
-import Smerpgohero from '../assets/Smerpgophone.png';
+import Smerpgologo from '../assets/smerpgologo.png';
+import Smerpgohero from '../assets/smerpgophone.png';
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 const KuleanPaySection = () => {
