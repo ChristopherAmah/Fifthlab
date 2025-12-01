@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -6,6 +7,9 @@ import ndpr from "../assets/ndpr.png";
 import darklogo from "../assets/darklogo.png";
 
 export default function Footer() {
+  // Scroll to top function
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   return (
     <footer className="bg-black text-white pt-16 pb-8 px-5 sm:px-8 md:px-20">
       
@@ -19,25 +23,33 @@ export default function Footer() {
           </div>
 
           <p className="text-[#A19EC2] text-[16px] sm:text-[18px] max-w-xs mx-auto sm:mx-0">
-            Plot 7, Joshua Ebun Ojo Close, off Rufus Giwa.  
-            Lekki Phase 1, Lagos Nigeria.
+            <a 
+              href="https://maps.google.com/?q=Plot+7,+Joshua+Ebun+Ojo+Close,+Lekki+Phase+1,+Lagos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Plot 7, Joshua Ebun Ojo Close, off Rufus Giwa.  
+              Lekki Phase 1, Lagos Nigeria.
+            </a>
           </p>
 
           {/* Social Icons */}
           <div className="flex justify-center sm:justify-start gap-4 mt-6 text-2xl">
-            <FaFacebookF />
-            <FaXTwitter />
-            <FaInstagram />
-            <FaLinkedinIn />
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://linkedin.com/company/fifthlab" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
           </div>
 
           {/* NDPR Badge */}
           <div className="flex justify-center sm:justify-start mt-6">
-            <img 
-              src={ndpr} 
-              alt="NDPR Audit" 
-              className="h-[90px] sm:h-[110px]"
-            />
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img 
+                src={ndpr} 
+                alt="NDPR Audit" 
+                className="h-[90px] sm:h-[110px]"
+              />
+            </a>
           </div>
         </div>
 
@@ -45,12 +57,13 @@ export default function Footer() {
         <div className="text-center sm:text-left">
           <h3 className="font-bold text-[18px] sm:text-[20px] mb-4">Product</h3>
           <ul className="space-y-2 text-[#A19EC2] text-[16px] sm:text-[18px]">
-            <li>Bulkwave</li>
-            <li>FinEdge</li>
-            <li>KuleanPay</li>
-            <li>Pesso</li>
-            <li>Smerp</li>
-            <li>UCP</li>
+            <li><Link to="/bulkwave" onClick={scrollToTop}>Bulkwave</Link></li>
+            <li><Link to="/finedge" onClick={scrollToTop}>FinEdge</Link></li>
+            <li><Link to="/kuleanpay" onClick={scrollToTop}>KuleanPay</Link></li>
+            <li><Link to="/beetvas" onClick={scrollToTop}>BeetVAS</Link></li>
+            <li><Link to="/smerp" onClick={scrollToTop}>Smerp</Link></li>
+            <li><Link to="/smerpgo" onClick={scrollToTop}>SmerpGo</Link></li>
+            <li><Link to="/ucp" onClick={scrollToTop}>UCP</Link></li>
           </ul>
         </div>
 
@@ -58,10 +71,10 @@ export default function Footer() {
         <div className="text-center sm:text-left">
           <h3 className="font-bold text-[18px] sm:text-[20px] mb-4">Company</h3>
           <ul className="space-y-2 text-[#A19EC2] text-[16px] sm:text-[18px]">
-            <li>About Us</li>
-            <li>Contact us</li>
-            <li>Careers</li>
-            <li>Insights</li>
+            <li><Link to="/about-us" onClick={scrollToTop}>About Us</Link></li>
+            <li><Link to="/contact-us" onClick={scrollToTop}>Contact us</Link></li>
+            <li><Link to="#" onClick={scrollToTop}>Careers</Link></li>
+            <li><Link to="/insights" onClick={scrollToTop}>Insights</Link></li>
           </ul>
         </div>
 
@@ -71,20 +84,24 @@ export default function Footer() {
 
           <div className="flex items-center sm:items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] mb-4">
             <Mail size={18} />
-            <span>Hello@thefifthlab.com</span>
+            <a href="mailto:Hello@thefifthlab.com">Hello@thefifthlab.com</a>
           </div>
 
           <div className="flex items-center sm:items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] mb-4">
             <Phone size={18} />
-            <span>+234 816 235 2009</span>
+            <a href="tel:+2348162352009">+234 816 235 2009</a>
           </div>
 
           <div className="flex items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] leading-snug">
             <MapPin size={32} />
-            <span>
+            <a 
+              href="https://maps.google.com/?q=7+Joshua+Ebun+Ojo+Cl,+Lekki+Phase+1,+Lagos"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               7 Joshua Ebun Ojo Cl, Lekki Phase I,  
               Lekki 106104, Lagos, Nigeria.
-            </span>
+            </a>
           </div>
         </div>
 
@@ -102,8 +119,8 @@ export default function Footer() {
 
         <p>
           All Rights Reserved | 
-          <span className="ml-1 underline text-white cursor-pointer">Terms and Conditions</span> |
-          <span className="ml-1 underline text-white cursor-pointer">Privacy Policy</span>
+          <Link to="/terms" className="ml-1 underline text-white" onClick={scrollToTop}>Terms and Conditions</Link> |
+          <Link to="/privacy" className="ml-1 underline text-white" onClick={scrollToTop}>Privacy Policy</Link>
         </p>
       </div>
 

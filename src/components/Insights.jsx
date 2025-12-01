@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 // 3. Import required modules for effects
 import { Pagination, Autoplay } from 'swiper/modules';
 import { BsArrowUpRight } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 // --- Dummy Data ---
 const insightsData = [
@@ -101,10 +102,12 @@ const InsightsSection = () => {
 
         {/* --- Footer Button --- */}
         <div className="mt-8 sm:mt-10 text-center">
-          <button className="inline-flex items-center gap-2 bg-[#00B4D8] text-white text-sm sm:text-[18px] font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-[1010px] hover:bg-[#009bd6] transition-colors duration-300">
+          <Link to="/insights">
+            <button className="inline-flex items-center gap-2 bg-[#00B4D8] text-white text-sm sm:text-[18px] font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-[1010px] hover:bg-[#009bd6] transition-colors duration-300">
             View all Insights
             <BsArrowUpRight className="text-lg stroke-1" />
           </button>
+          </Link>
         </div>
 
       </div>

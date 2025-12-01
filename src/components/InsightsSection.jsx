@@ -74,7 +74,7 @@ const InsightsSection = () => {
       : blogPosts.filter((post) => post.category === selectedCategory);
 
   return (
-    <section className="font-sans py-12 md:py-[120px] px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
+    <section className="font-sans py-12 md:py-[120px] px-4 sm:px-6 lg:px-8 relative overflow-hidden ">
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* --- Header Section --- */}
@@ -118,7 +118,7 @@ const InsightsSection = () => {
 
         {/* --- Featured Blog Post --- */}
         <div className="max-w-6xl mx-auto mb-16 md:mb-20">
-          <article className="flex flex-col lg:flex-row bg-white border border-gray-100 rounded-4xl  overflow-hidden md:px-[31.42px]">
+          <article className="flex flex-col lg:flex-row border border-gray-100 rounded-4xl  overflow-hidden md:px-[31.42px]">
 
             {/* Left Side (Image) */}
             <div className="lg:w-1/2 relative">
