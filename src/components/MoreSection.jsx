@@ -61,25 +61,23 @@ const ImpactSection = () => {
 
           {/* Top Right Box */}
           <div>
-            <div className="bg-[#0090AD] text-white rounded-[66.42px] h-full">
-              <p
-                className="text-base text-center font-normal py-8 px-6 sm:text-[32px] sm:py-12 sm:px-12"
-              >
+            <div className="bg-[#0090AD] text-white rounded-[66.42px] h-full flex items-center justify-center">
+              <p className="text-base text-center font-normal py-8 px-6 sm:text-[32px] sm:py-12 sm:px-12">
                 Live your best life, create more and multiply your impact with the tools and solutions we provide.
               </p>
             </div>
           </div>
 
+
           {/* Bottom Left Box */}
           <div>
-            <div className="bg-[#E6F8FB] text-[#121212] rounded-[66.42px] relative h-full">
-              <p
-                className="text-base text-center font-normal py-8 px-6 sm:text-[26px] sm:py-12 sm:px-12"
-              >
+            <div className="bg-[#E6F8FB] text-[#121212] rounded-[66.42px] h-full flex items-center justify-center">
+              <p className="text-base text-center font-normal py-8 px-6 sm:text-[26px] sm:py-12 sm:px-12">
                 The reward for a great idea is the tools to make it happen. We provide you with financial and operational tools that help you do business differently and with ease.
               </p>
             </div>
           </div>
+
 
           {/* Right Column */}
           <div className="flex flex-col justify-end items-end">
