@@ -84,7 +84,7 @@ export default function Footer() {
 
           <div className="flex items-center sm:items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] mb-4">
             <Mail size={18} />
-            <a href="mailto:Hello@thefifthlab.com">Hello@thefifthlab.com</a>
+            <a href="mailto:hello@thefifthlab.com">hello@thefifthlab.com</a>
           </div>
 
           <div className="flex items-center sm:items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] mb-4">
@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] leading-snug">
-            <MapPin size={32} />
+            <MapPin size={50} />
             <a 
               href="https://maps.google.com/?q=7+Joshua+Ebun+Ojo+Cl,+Lekki+Phase+1,+Lagos"
               target="_blank"
