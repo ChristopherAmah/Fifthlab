@@ -35,10 +35,10 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex justify-center sm:justify-start gap-4 mt-6 text-2xl">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-            <a href="https://linkedin.com/company/fifthlab" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/FifthlabAfrica" target="_blank" rel="noopener noreferrer"><FaFacebookF /></a>
+            <a href="https://x.com/FifthlabAfrica" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
+            <a href="https://www.instagram.com/fifthlabafrica/" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://www.linkedin.com/company/fifthlab/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
           </div>
 
           {/* NDPR Badge */}
