@@ -73,7 +73,7 @@ export default function Footer() {
           <ul className="space-y-2 text-[#A19EC2] text-[16px] sm:text-[18px]">
             <li><Link to="/about-us" onClick={scrollToTop}>About Us</Link></li>
             <li><Link to="/contact-us" onClick={scrollToTop}>Contact us</Link></li>
-            <li><Link to="#" onClick={scrollToTop}>Careers</Link></li>
+            <li><Link to="/about-us" onClick={scrollToTop}>Careers</Link></li>
             <li><Link to="/insights" onClick={scrollToTop}>Insights</Link></li>
           </ul>
         </div>
@@ -120,7 +120,7 @@ export default function Footer() {
         <p>
           All Rights Reserved | 
           <Link to="/terms" className="ml-1 underline text-white" onClick={scrollToTop}>Terms and Conditions</Link> |
-          <Link to="/privacy" className="ml-1 underline text-white" onClick={scrollToTop}>Privacy Policy</Link>
+          <Link to="/privacy-policy" className="ml-1 underline text-white" onClick={scrollToTop}>Privacy Policy</Link>
         </p>
       </div>
 

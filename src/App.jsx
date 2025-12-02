@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar'
 import Footer from "./components/Footer";
@@ -16,6 +16,7 @@ import Smerp from "./pages/Smerp";
 import Smerpgo from "./pages/Smerpgo";
 import Beetvas from "./pages/Beetvas";
 import ArticlePage from "./pages/ArticlePage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
         <Route path="/smerpgo" element={<Smerpgo />} />
         <Route path="/beetvas" element={<Beetvas />} />
         <Route path="/article" element={<ArticlePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
+        {/* Catch-all route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       
       <Community />
