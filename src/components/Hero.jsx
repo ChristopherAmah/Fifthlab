@@ -59,7 +59,7 @@ export default function HeroSection() {
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4">
 
       {/* 🔵 CURVED INFINITE SCROLL */}
-      <div className="absolute left-0 w-full overflow-visible py-6 sm:py-10">
+      <div className="absolute top-40 md:top-70 left-0 w-full overflow-visible py-6 sm:py-10">
         <div
           className="flex" // Removed gap-6/gap-8, spacing is now managed by itemWidthWithGap
           style={{ 
