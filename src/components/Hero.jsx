@@ -10,6 +10,7 @@ import smerphero from "../assets/smerphero.png";
 import beetvashero from "../assets/beetvashero.png";
 import smerpgohero from "../assets/smerpgohero.png";
 
+// Define the base component
 export default function HeroSection() {
   const images = [
     smerphero,
@@ -22,13 +23,33 @@ export default function HeroSection() {
   ];
 
   // Duplicate for infinite loop
-  // Doubling is usually enough, but tripling helps buffer against large screen sizes.
   const loopedImages = [...images, ...images, ...images]; 
 
   const [offset, setOffset] = useState(0);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  const itemWidthWithGap = 200; // Total width per item (e.g., 180px item + 20px gap)
+  // --- 1. Responsive Size Function ---
+  // Calculates card dimensions based on screen size
+  const getCardSize = () => {
+    let cardWidth = 180; // Default for small screens
+    let cardGap = 20;
+
+    if (screenWidth >= 1024) { // Large screens (lg)
+        cardWidth = 260; // Larger card width
+        cardGap = 40;
+    } else if (screenWidth >= 768) { // Medium screens (md)
+        cardWidth = 220; // Medium card width
+        cardGap = 30;
+    }
+    
+    return { 
+        cardWidth, 
+        cardGap, 
+        itemWidthWithGap: cardWidth + cardGap 
+    };
+  };
+
+  const { cardWidth, cardGap, itemWidthWithGap } = getCardSize();
   const speed = 0.5; // scroll speed
 
   useEffect(() => {
@@ -39,21 +60,25 @@ export default function HeroSection() {
     const trackWidth = images.length * itemWidthWithGap;
 
     const interval = setInterval(() => {
-      setOffset((prev) => (prev + speed) % trackWidth);
+      // Use a function to ensure we capture the latest itemWidthWithGap if it changes on resize
+      const currentTrackWidth = images.length * getCardSize().itemWidthWithGap;
+      setOffset((prev) => (prev + speed) % currentTrackWidth);
     }, 16);
 
     return () => {
       clearInterval(interval);
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Depend on images.length and itemWidthWithGap if they change, otherwise empty array is fine.
+  }, [screenWidth, itemWidthWithGap]); // Add dependencies for correct recalculation on resize
 
   // --- Key Arch/Curve Customization Variables ---
   const screenCenter = screenWidth / 2;
-  const maxDistanceFromCenter = screenWidth / 1.5; // Area where curve is visible
-  const curveHeight = screenWidth < 640 ? 150 : 250; // Max height of the curve (how far up the center item is)
-  const maxRotation = screenWidth < 640 ? 15 : 25; // Max rotation angle in degrees
-  const minScale = screenWidth < 640 ? 0.5 : 0.6; // Minimum scale for items far away
+  // Increase maxDistanceFromCenter to match the wider track and items
+  const maxDistanceFromCenter = screenWidth / 1.5; 
+  // Scale curve height proportionally to card size
+  const curveHeight = cardWidth < 200 ? 150 : 250; 
+  const maxRotation = screenWidth < 640 ? 15 : 25; 
+  const minScale = screenWidth < 640 ? 0.5 : 0.6; 
 
   return (
     <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden px-4">
@@ -61,10 +86,11 @@ export default function HeroSection() {
       {/* 🔵 CURVED INFINITE SCROLL */}
       <div className="absolute top-40 md:top-70 left-0 w-full overflow-visible py-6 sm:py-10">
         <div
-          className="flex" // Removed gap-6/gap-8, spacing is now managed by itemWidthWithGap
+          className="flex" 
           style={{ 
             transform: `translateX(-${offset}px)`,
-            gap: `${itemWidthWithGap - 180}px` // Using a fixed item width of 180px for the image, adjust gap accordingly
+            // Use the calculated gap
+            gap: `${cardGap}px` 
           }}
         >
           {loopedImages.map((img, index) => {
@@ -74,19 +100,17 @@ export default function HeroSection() {
             const distance = itemCenter - screenCenter;
 
             // Normalized distance (-1 to 1) relative to the maxDistanceFromCenter
-            // This is the key change for the arched effect
             let normalizedDistance = distance / maxDistanceFromCenter;
             
             // Clamp value between -1 and 1
             normalizedDistance = Math.max(-1, Math.min(1, normalizedDistance));
 
             // Use a curve that rises steeply towards the center (parabola: x^2)
-            // 1 - normalizedDistance^2 gives a value from 0 (far away) to 1 (center)
             const centerFactor = 1 - Math.pow(Math.abs(normalizedDistance), 2);
 
             // Calculate vertical offset (curveY) and scale
-            const curveY = -centerFactor * curveHeight; // Negative to move items UP (creating the arch)
-            const scale = minScale + centerFactor * (1 - minScale); // Scale from minScale up to 1 (center)
+            const curveY = -centerFactor * curveHeight; 
+            const scale = minScale + centerFactor * (1 - minScale); 
             
             // Calculate rotation (rotate items outward from the center)
             const rotate = normalizedDistance * maxRotation; 
@@ -99,18 +123,20 @@ export default function HeroSection() {
                 key={index}
                 className="shrink-0"
                 style={{
-                  width: `180px`, // Explicitly set width to the image size
+                  // 2. Use the responsive cardWidth for the container
+                  width: `${cardWidth}px`, 
                   transform: `translateY(${curveY}px) rotate(${rotate}deg) scale(${scale})`,
                   zIndex,
-                  // Use `motion.div`'s `transition` property or a CSS class for smooth animation
                 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 <img
                   src={img}
                   alt={`hero-${index}`}
-                  // Keep image size consistent, using w-[180px] to match the explicit width
-                  className="w-[180px] h-auto object-contain" 
+                  // 3. Use the responsive cardWidth for the image
+                  className={`w-[${cardWidth}px] h-auto object-contain`} 
+                  // Fallback for Tailwind CSS if dynamic class isn't parsed correctly:
+                  style={{ width: `${cardWidth}px` }} 
                 />
               </motion.div>
             );
@@ -118,8 +144,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* 🔵 TEXT CONTENT (Keep this section as is) */}
-      <div className="relative z-10 max-w-4xl mx-auto mt-50 sm:mt-50 md:mt-50 mb-20">
+      {/* 🔵 TEXT CONTENT (Kept separate for clarity) */}
+      <div className="relative z-10 max-w-4xl mx-auto mt-50 sm:mt-50 md:mt-70 mb-20">
         <h1 className="text-3xl sm:text-4xl md:text-[62px] font-medium text-[#0E0E0E] mb-6 leading-tight">
           Building the Future of <br className="hidden sm:inline" /> Integrated Solutions.
         </h1>
