@@ -56,7 +56,7 @@ export default function HeroSection() {
   const minScale = screenWidth < 640 ? 0.5 : 0.6; // Minimum scale for items far away
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden px-4">
+    <section className="relative w-full flex flex-col items-center justify-center text-center overflow-hidden px-4">
 
       {/* 🔵 CURVED INFINITE SCROLL */}
       <div className="absolute top-40 md:top-70 left-0 w-full overflow-visible py-6 sm:py-10">
@@ -119,7 +119,7 @@ export default function HeroSection() {
       </div>
 
       {/* 🔵 TEXT CONTENT (Keep this section as is) */}
-      <div className="relative z-10 max-w-4xl mx-auto mt-40 sm:mt-60 md:mt-72 mb-20">
+      <div className="relative z-10 max-w-4xl mx-auto mt-50 sm:mt-50 md:mt-50 mb-20">
         <h1 className="text-3xl sm:text-4xl md:text-[62px] font-medium text-[#0E0E0E] mb-6 leading-tight">
           Building the Future of <br className="hidden sm:inline" /> Integrated Solutions.
         </h1>
