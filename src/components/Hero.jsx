@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Import images
 import bulkwavehero from "../assets/bulkwavehero.png";
@@ -155,9 +156,11 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button className="px-6 sm:px-8 py-3 bg-[#00B4D8] text-white font-semibold rounded-full text-[16px] sm:text-[18px] hover:bg-cyan-600 transition duration-300">
+          <Link to="/solutions">
+            <button className="px-6 sm:px-8 py-3 bg-[#00B4D8] text-white font-semibold rounded-full text-[16px] sm:text-[18px] hover:bg-cyan-600 transition duration-300">
             See Our Solutions
           </button>
+          </Link>
 
           <button className="px-6 sm:px-8 py-3 text-[#000000] font-bold text-[16px] sm:text-[18px] cursor-pointer hover:rounded-full hover:bg-cyan-50 transition duration-300 flex items-center gap-2">
             Book A Demo <span className="font-bold text-[18px]">&rarr;</span>
