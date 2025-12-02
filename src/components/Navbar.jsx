@@ -45,7 +45,7 @@ export default function Navbar() {
       {/* Center Logo */}
       <div className="absolute left-1/2 transform -translate-x-1/2">
         <Link to="/">
-          <img src={fifthlab} alt="fifthlab logo" className="h-8 object-contain" />
+          <img src={fifthlab} alt="fifthlab logo" className="h-5 object-contain" />
         </Link>
       </div>
 
