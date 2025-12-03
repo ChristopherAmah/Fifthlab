@@ -86,7 +86,7 @@ const InsightsSection = () => {
             onClick={() =>
               navigate(`/article/${posts[0].id}`, { state: posts[0] })
             }
-            className="px-30 overflow-hidden mb-16 flex flex-col lg:flex-row gap-10 cursor-pointer"
+            className="md:px-30 overflow-hidden mb-16 flex flex-col lg:flex-row gap-10 cursor-pointer"
           >
             <img
               src={posts[0].image || insights} // **Re-added fallback here for Insights page display**
@@ -114,7 +114,7 @@ const InsightsSection = () => {
         )}
 
         {/* GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:px-20">
           {(loading ? Array(6).fill(null) : filtered).map((post, index) => (
             <div
               key={index}
