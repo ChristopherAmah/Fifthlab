@@ -35,11 +35,11 @@ function App() {
         <Route path="/smerp" element={<Smerp />} />
         <Route path="/smerpgo" element={<Smerpgo />} />
         <Route path="/beetvas" element={<Beetvas />} />
-        <Route path="/article" element={<ArticlePage />} />
+        <Route path="/article/:id" element={<ArticlePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Catch-all route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
       
       <Community />
