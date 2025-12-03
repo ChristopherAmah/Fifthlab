@@ -39,7 +39,7 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
         {/* Catch-all route */}
-        {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       
       <Community />
