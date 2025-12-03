@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 // insights import has been removed
 import background from '../assets/background.png';
+import logo from '../assets/logo.png';
 
 // Utility function to safely set inner HTML for the article body
 function createMarkup(htmlContent) {
@@ -134,8 +135,8 @@ const ArticlePage = ({ allPosts = [] }) => {
                 {/* Meta */}
                 <div className="flex flex-wrap items-center text-[13px] text-[#6C6D6F] mb-10 max-w-4xl mx-auto gap-2">
                     <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 rounded-full border border-gray-200 flex items-center justify-center text-xs font-bold text-gray-600">
-                            FL
+                        <div className="w-12 h-12 p-1 rounded-full border border-gray-200 flex items-center justify-center">
+                            <img src={logo} alt="" />
                         </div>
                         <span className="text-black text-[16px]">Fifthlab Africa</span>
                     </div>
@@ -148,13 +149,13 @@ const ArticlePage = ({ allPosts = [] }) => {
                 </div>
 
                 {/* Featured Image */}
-                <div className="relative w-full overflow-hidden mb-10 max-w-4xl mx-auto">
+{/*                 <div className="relative w-full overflow-hidden mb-10 max-w-4xl mx-auto">
                     <img
 //                         src={image} 
 //                         alt={titleMain}
                         className="w-full h-auto object-cover rounded-4xl"
                     />
-                </div>
+                </div> */}
 
                 {/* Article Body */}
                 <section className="text-base sm:text-base lg:text-lg leading-relaxed text-[#3C3C3C] mb-12 sm:mb-16 lg:mb-[108px] max-w-4xl mx-auto">
