@@ -62,7 +62,7 @@ const InsightsSection = () => {
         </header>
 
         {/* CATEGORY FILTER */}
-        <div className="flex justify-center md:justify-center mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
+        <div className="flex justify-start md:justify-center mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
           <div className="flex items-center bg-gray-100 rounded-full p-2 space-x-2">
             {categories.map((cat) => (
               <button
