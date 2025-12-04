@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutvideo from '../assets/aboutvideo.png';
+import aboutvideo from '../assets/aboutvideo.mp4';
 
 const FifthlabSection = () => {
   return (
@@ -70,10 +70,14 @@ const FifthlabSection = () => {
           <div className="relative overflow-hidden rounded-2xl shadow-xl w-full aspect-video">
             
             {/* Replace 'your-image-url.jpg' with the actual image URL or a component */}
-            <img 
-              src={aboutvideo} 
-              alt="Fifthlab Office Building" 
-              className="w-full h-full object-cover"
+            <video
+              src={aboutvideo}   // ✅ This is now a VIDEO file
+              className="w-full h-full object-cover responsive-video"
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
             />
           </div>
         </div>

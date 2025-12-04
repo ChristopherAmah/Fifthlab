@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react'; // 👈 Added useEffect
 import { useLocation, useNavigate } from 'react-router-dom';
 // insights import has been removed
 import background from '../assets/background.png';
@@ -12,22 +12,22 @@ function createMarkup(htmlContent) {
 }
 
 // === RELATED ARTICLE CARD (REVISED) ===
-// Removed any potential fallback if article.image was ever undefined here too.
 const RelatedArticleCard = ({ article }) => {
     const navigate = useNavigate();
 
     return (
         <div 
+            // 💡 Ensure navigation pushes a new history entry even if the path is the same (only state changes)
             onClick={() => navigate(`/article/${article.id}`, { state: article })}
             className="flex flex-col relative rounded-[38.15px] overflow-hidden min-h-[300px] sm:min-h-[400px] lg:min-h-[497px] cursor-pointer"
         >
             {/* Ensure article.image is the ONLY source here */}
             <img
-//                 src={article.image}
-//                 alt={article.titleMain}
+                // src={article.image}
+                // alt={article.titleMain}
                 className="w-full h-full object-cover absolute"
             />
-            <div className="relative p-4 sm:p-6 flex flex-col justify-end h-full bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+            <div className="relative p-4 sm:p-6 flex flex-col justify-end h-full bg-linear-to-t from-black/90 via-black/60 to-transparent">
                 <h3 className="text-lg sm:text-[22px] lg:text-[26px] font-medium text-white mb-2 sm:mb-3 leading-snug">
                     {article.titleMain}
                 </h3>
@@ -46,7 +46,13 @@ const RelatedArticleCard = ({ article }) => {
 const ArticlePage = ({ allPosts = [] }) => {
     const location = useLocation();
     const navigate = useNavigate();
-    
+    
+    // 💡 FIX 1: Scroll to the top when the component mounts or location changes
+    useEffect(() => {
+        // This ensures the page always starts at the top, not the footer.
+        window.scrollTo(0, 0);
+    }, [location.pathname]); // Run whenever the URL path changes
+
     // The current article data passed via navigation state
     const currentArticle = location.state;
 
@@ -70,7 +76,7 @@ const ArticlePage = ({ allPosts = [] }) => {
                     The article data is missing. Please go back to the insights page.
                 </p>
                 <button
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate('/insights')} // Navigate directly to prevent the double-click issue
                     className="bg-black text-white px-6 py-3 rounded-xl"
                 >
                     Go Back
@@ -111,7 +117,8 @@ const ArticlePage = ({ allPosts = [] }) => {
                 
                 {/* Back Button */}
                 <button 
-                  onClick={() => navigate(-1)} 
+                    // 💡 FIX 2: Navigate directly to the Insights route
+                  onClick={() => navigate('/insights')} 
                   className="text-gray-600 hover:text-black mb-10 flex items-center"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -148,7 +155,7 @@ const ArticlePage = ({ allPosts = [] }) => {
                     <time dateTime={pubDate}>{date}</time>
                 </div>
 
-                {/* Featured Image */}
+                {/* Featured Image (Commented out in original) */}
 {/*                 <div className="relative w-full overflow-hidden mb-10 max-w-4xl mx-auto">
                     <img
 //                         src={image} 
