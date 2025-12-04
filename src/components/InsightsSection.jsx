@@ -164,7 +164,7 @@ const InsightsSection = () => {
             <button
                 onClick={handleSearchToggle}
                 className={`flex items-center justify-center w-10 h-10 text-sm rounded-full transition ${
-                  isSearchVisible ? "bg-black text-white" : "text-gray-600 hover:bg-gray-300"
+                  isSearchVisible ? " text-black" : "text-gray-600 hover:bg-gray-300"
                 }`}
             >
                 {/* SVG for Search Icon (Magnifying Glass) */}
