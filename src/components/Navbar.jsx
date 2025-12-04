@@ -13,6 +13,7 @@ export default function Navbar() {
 
       {/* Left Navigation (Desktop) */}
       <div className="hidden md:flex items-center gap-6 text-[#7C7C7C] text-[16px]">
+        <Link to="/" className="hover:text-black transition">Home</Link>
         <Link to="/about-us" className="hover:text-black transition">About Us</Link>
 
         {/* Solutions Dropdown */}
@@ -68,6 +69,10 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center py-4 gap-4 md:hidden z-50">
+
+          <Link to="/" className="hover:text-black transition" onClick={() => setIsMobileMenuOpen(false)}>
+            Home
+          </Link>
 
           <Link to="/about-us" className="hover:text-black transition" onClick={() => setIsMobileMenuOpen(false)}>
             About Us
