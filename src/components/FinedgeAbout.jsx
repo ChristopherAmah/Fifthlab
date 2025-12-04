@@ -32,38 +32,22 @@ const KuleanPayScroll = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Scroll sync logic
-  const handleScroll = () => {
-    if (isMobile) return;
+  // *** SCROLL SYNC LOGIC (handleScroll) REMOVED ***
 
-    const wrapper = document.getElementById("scroll-wrapper");
-    if (!wrapper) return;
-
-    const rect = wrapper.getBoundingClientRect();
-    const offset = window.innerHeight * 0.3;
-    const progress = -(rect.top - offset);
-    const sectionHeight = wrapper.clientHeight / sections.length;
-
-    let index = Math.floor(progress / sectionHeight);
-    index = Math.max(0, Math.min(sections.length - 1, index));
-    setCurrentIndex(index);
-  };
-
-  // Detect mobile & add scroll listener
+  // Detect mobile & remove scroll listener for desktop to disable image-on-scroll
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    // *** SCROLL EVENT LISTENER REMOVED ***
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      // *** SCROLL EVENT REMOVAL REMOVED ***
       window.removeEventListener("resize", checkMobile);
     };
   }, [isMobile]);
 
-  // Autoplay effect for desktop
+  // Autoplay effect for desktop (RETAINED)
   useEffect(() => {
     if (isMobile) return; // No autoplay on mobile
 
@@ -74,13 +58,16 @@ const KuleanPayScroll = () => {
     return () => clearInterval(interval);
   }, [isMobile]);
 
+  // The onClick handler below handles manual clicks (RETAINED)
+
   return (
     <section className="w-full py-10">
       {!isMobile ? (
         <div
           id="scroll-wrapper"
           className="mx-auto grid grid-cols-2 gap-10 px-6 md:px-16 lg:px-32 relative"
-          style={{ minHeight: `${sections.length * 100}vh` }}
+          // *** MODIFIED: Set a normal height to prevent scroll-linked image change ***
+          style={{ minHeight: "80vh" }}
         >
           {/* LEFT IMAGE */}
           <div className="sticky top-24 h-[80vh] rounded-[20px] overflow-hidden">
@@ -105,7 +92,7 @@ const KuleanPayScroll = () => {
                     className={`flex gap-4 md:gap-5 items-start cursor-pointer transition-all duration-300 ${
                       idx === currentIndex ? "opacity-100" : "opacity-70"
                     }`}
-                    onClick={() => setCurrentIndex(idx)} // Update currentIndex on click
+                    onClick={() => setCurrentIndex(idx)} // Update currentIndex on click (RETAINED)
                   >
                     {/* Highlight Bar */}
                     <div

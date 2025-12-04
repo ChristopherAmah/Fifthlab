@@ -12,10 +12,10 @@ const WhatWeDoSection = () => {
             </h2>
         
         {/* Top Section: Heading and Main Description */}
-        <div className="flex flex-col lg:flex-row justify-between gap-x-20 mb-10">
+        <div className="flex flex-col lg:flex-row justify-between mb-10">
           {/* Left Column: Main Heading and Text (Starts at the top by default) */}
           <div className="lg:w-1/2">
-            <p className="text-[20px] text-[#596780] max-w-lg mb-6">
+            <p className="text-[20px] text-[#596780] mb-6">
               We bridge the gap between technology and people, 
               offering dynamic solutions to business and everyday 
               challenges, simplifying operations along the way. Our 
@@ -26,8 +26,8 @@ const WhatWeDoSection = () => {
           
           {/* Right Column: Emphasized Quote/Statement */}
           {/* 👇 Change `items-center` to `items-start` */}
-          <div className="lg:w-1/2 flex items-start">
-            <p className="text-[20px] text-[#00B4D8] max-w-lg">
+          <div className="lg:w-2/3 flex items-start">
+            <p className="text-[20px] text-[#00B4D8] max-w-md ms-auto py-2">
               With years of research focusing on solving 
               problems with people and businesses in mind, 
               we're committed to delivering a premium user 

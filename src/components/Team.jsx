@@ -77,8 +77,8 @@ const TeamMemberCard = ({ name, title, imageSrc }) => (
 // --- Main Team Section Component ---
 const AmazingTeamSection = () => {
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-[121px]">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 px-4 md:px-8 lg:px-[120px]">
+      <div className="mx-auto">
         
         {/* Top Text Block */}
         <div className="flex flex-col lg:flex-row justify-between  mb-12">

@@ -64,20 +64,35 @@ const FifthlabSection = () => {
           </div>
         </div>
         
-        {/* Right Column: Video */}
-        <div className="w-full lg:w-1/2">
-          <div className="relative overflow-hidden rounded-2xl shadow-xl w-full lg:h-[400px] aspect-video">
-            <video
-              src={aboutvideo}
-              className="w-full h-full object-cover"
-              controls
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
-          </div>
-        </div>
+        {/* Right Column: Video (Option 2) */}
+<div className="w-full lg:w-1/2">
+  <div className="
+    p-4                                     {/* 1. Inner padding to frame the video */}
+    bg-white/50 backdrop-blur-sm            {/* 2. Light, frosted background (Optional: if the background is complex) */}
+    rounded-[2.5rem]                        {/* 3. Very large, distinctive border radius */}
+    shadow-2xl shadow-gray-700/30           {/* 4. Custom, darker, spread-out shadow */}
+    ring-4 ring-cyan-200/50                 {/* 5. Light, subtle ring/border for definition */}
+    w-full lg:h-[450px] aspect-video
+    group relative overflow-visible
+  ">
+    <div className="relative overflow-hidden rounded-3xl"> {/* Inner container for video corner radius */}
+      <video
+        src={aboutvideo}
+        className="w-full h-[420px] object-cover"
+        controls
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
+    </div>
+    
+    {/* Optional: Add a decorative element like a corner tag or badge */}
+    {/* <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 bg-[#00B4D8] text-white text-xs font-semibold px-3 py-1 rounded-full shadow-lg opacity-90">
+        Demo
+    </div> */}
+  </div>
+</div>
 
       </div>
     </section>

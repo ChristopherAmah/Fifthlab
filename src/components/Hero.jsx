@@ -134,7 +134,7 @@ export default function HeroSection() {
                   rotate: rotate, 
                   scale: scale, 
                 }}
-                whileHover={{ scale: scale * 1.10 }} // ✅ Apply hover scale *on the div*
+                whileHover={{ scale: scale * 1.30 }} // ✅ Apply hover scale *on the div*
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 <img
