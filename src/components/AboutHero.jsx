@@ -3,21 +3,21 @@ import aboutvideo from '../assets/aboutvideo.mp4';
 
 const FifthlabSection = () => {
   return (
-    <section className="pt-[182.25px] px-4 md:px-8 lg:px-[139.07px]">
-      {/* Outer Container for max width and centering */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+    <section className="pt-24 sm:pt-32 lg:pt-[182.25px] px-4 sm:px-6 lg:px-[139.07px]">
+      {/* Outer Container */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         
-        {/* Left Column: Text Content and Stats */}
-        <div className="lg:w-1/2">
+        {/* Left Column */}
+        <div className="w-full lg:w-1/2">
           
           {/* Main Heading */}
-          <h1 className="text-[75px] font-medium text-[#0E0E0E] leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[75px] font-medium text-[#0E0E0E] leading-tight mb-6 text-center lg:text-left">
             We Are <br />
             <span className="text-[#0E0E0E]">Fifthlab</span>
           </h1>
           
           {/* Introductory Text */}
-          <p className="text-[20px] text-[#596780] mb-6 max-w-lg">
+          <p className="text-base sm:text-lg md:text-[20px] text-[#596780] mb-8 max-w-lg text-center lg:text-left mx-auto lg:mx-0">
             Welcome to Fifthlab, your trusted partner in digital 
             transformation. Since 2020, we’ve been on a 
             mission to empower businesses of all sizes with 
@@ -26,11 +26,11 @@ const FifthlabSection = () => {
           </p>
           
           {/* Statistics Grid */}
-          <div className="flex justify-between">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center lg:text-left">
             
             {/* Stat 1 */}
-            <div className="flex-1">
-              <p className="text-5xl font-medium text-[#00B4D8] mb-1">
+            <div>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#00B4D8] mb-1">
                 50,000+
               </p>
               <p className="text-sm text-[#7C7C7C]">
@@ -40,8 +40,8 @@ const FifthlabSection = () => {
             </div>
             
             {/* Stat 2 */}
-            <div className="flex-1 ml-8">
-              <p className="text-5xl font-medium text-[#00B4D8] mb-1">
+            <div>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#00B4D8] mb-1">
                 250+
               </p>
               <p className="text-sm text-[#7C7C7C]">
@@ -51,8 +51,8 @@ const FifthlabSection = () => {
             </div>
             
             {/* Stat 3 */}
-            <div className="flex-1">
-              <p className="text-5xl font-medium text-[#00B4D8] mb-1">
+            <div>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#00B4D8] mb-1">
                 97%
               </p>
               <p className="text-sm text-[#7C7C7C]">
@@ -64,15 +64,12 @@ const FifthlabSection = () => {
           </div>
         </div>
         
-        {/* Right Column: Image/Video Placeholder */}
-        <div className="lg:w-1/2 w-full">
-          {/* This div simulates the styled container for the image/video */}
+        {/* Right Column: Video */}
+        <div className="w-full lg:w-1/2">
           <div className="relative overflow-hidden rounded-2xl shadow-xl w-full aspect-video">
-            
-            {/* Replace 'your-image-url.jpg' with the actual image URL or a component */}
             <video
-              src={aboutvideo}   // ✅ This is now a VIDEO file
-              className="w-full h-full object-cover responsive-video"
+              src={aboutvideo}
+              className="w-full h-full object-cover"
               controls
               autoPlay
               muted
@@ -81,6 +78,7 @@ const FifthlabSection = () => {
             />
           </div>
         </div>
+
       </div>
     </section>
   );
