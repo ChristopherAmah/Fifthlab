@@ -162,15 +162,19 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <Link to="/solutions">
+          <a href="#solutions">
             <button className="px-6 sm:px-8 py-3 bg-[#00B4D8] text-white font-semibold rounded-full text-[16px] sm:text-[18px] hover:bg-cyan-600 transition duration-300">
-            See Our Solutions
-          </button>
-          </Link>
+              See Our Solutions
+            </button>
+          </a>
+          
 
-          <button className="px-6 sm:px-8 py-3 text-[#000000] font-bold text-[16px] sm:text-[18px] cursor-pointer hover:rounded-full hover:bg-cyan-50 transition duration-300 flex items-center gap-2">
-            Book A Demo <span className="font-bold text-[18px]">&rarr;</span>
-          </button>
+          <a href="mailto:hello@thefifthlab.com">
+            <button className="px-6 sm:px-8 py-3 text-[#000000] font-bold text-[16px] sm:text-[18px] cursor-pointer hover:rounded-full hover:bg-cyan-50 transition duration-300 flex items-center gap-2">
+              Book A Demo <span className="font-bold text-[18px]">&rarr;</span>
+            </button>
+          </a>
+
         </div>
       </div>
     </section>

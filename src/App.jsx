@@ -17,6 +17,7 @@ import Smerpgo from "./pages/Smerpgo";
 import Beetvas from "./pages/Beetvas";
 import ArticlePage from "./pages/ArticlePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import OurSolution from "./components/OurSolution";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/beetvas" element={<Beetvas />} />
         <Route path="/article/:id" element={<ArticlePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/our-solutions" element={<OurSolution />} />
 
         {/* Catch-all route */}
         <Route path="*" element={<Navigate to="/" replace />} />

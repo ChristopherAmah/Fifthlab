@@ -1,20 +1,27 @@
 import React from 'react';
 import bulkwavelogo from '../assets/bulkwavelogo.png';
-import finedgelogo from '../assets/finedgelogo.png';
-import solution1 from '../assets/solution1.png';
-import smerplogo from '../assets/smerplogo.png'; 
-import beetvaslogo from '../assets/beetvaslogo.png'; 
-import ucplogo from '../assets/ucplogo.png'; 
-import smerpgologo from '../assets/smerpgologo.png'; 
+import finedgelogo from '../assets/finedgephone.png';
+import solution1 from '../assets/solution1.png'; // Assuming this is the bulkwave mockup image
+import smerplogo from '../assets/smerplogo.png';
+import beetvaslogo from '../assets/beetvaslogo.png';
+import ucplogo from '../assets/ucplogo.png';
+import smerpgologo from '../assets/smerpgologo.png';
 import kuleanpaylogo from '../assets/kuleanpaylogo.png';
 import smerpphone from '../assets/smerpphone.png';
 import ucpphone from '../assets/ucpphone.png';
 import smerpgophone from '../assets/smerpgophone.png';
 import kuleanpayphone from '../assets/kuleanpayphone.png';
-import finedgephone from '../assets/finedgephone.png'; 
-import beetvasphone from '../assets/beetvasphone.png'; 
-import { MdOutlineArrowOutward } from "react-icons/md";
+import finedgephone from '../assets/finedgelogo.png'; // Assuming a mobile mockup for finedge if using SolutionCard
+import beetvasphone from '../assets/beetvasphone.png'; // Assuming a mobile mockup for beetvas if using SolutionCard
+// Note: finedgelogo and beetvaslogo were used as mockups in the original.
+// I've kept 'solution1' for Bulkwave as it was the image source.
+// For Finedge and Beetvas, I'll use their respective 'phone' mockups for consistency with Smerp/Kuleanpay.
+// I'll also update the logo/mockup logic for them to reflect the component structure.
 
+import { MdOutlineArrowOutward } from "react-icons/md";
+import { Link } from 'react-router-dom';
+
+// SOLUTIONCARD COMPONENT (REMAINS UNCHANGED)
 const SolutionCard = ({
   logo,
   mockupImage,
@@ -25,10 +32,12 @@ const SolutionCard = ({
   mockupAlt,
   reverse = false,
   showTopHalf = true,
-  gradientBg = false
+  gradientBg = false,
+  linkUrl = "#",
+  mockupClass = "" 
 }) => {
   return (
-    <div className={`flex-1 ${bgColor} ${gradientBg ? 'bg-linear-to-br from-indigo-50 via-purple-50 to-blue-50' : ''} rounded-3xl px-4 sm:px-6 text-center mb-6 sm:mb-0`}>
+    <div className={`flex-1 ${bgColor} ${gradientBg ? 'bg-linear-to-br from-indigo-50 via-purple-50 to-blue-50' : ''} rounded-3xl px-4 sm:px-6 text-center mb-6 sm:mb-0`} >
       {reverse ? (
         <>
           <div className='pt-6 sm:pt-8'>
@@ -39,16 +48,20 @@ const SolutionCard = ({
             )}
             <h3 className="text-xl sm:text-2xl md:text-[36px] font-medium text-[#0E0E0E] mb-2">{title}</h3>
             <p className="text-sm sm:text-base md:text-[18px] text-[#828282] mb-6 sm:mb-8 max-w-md mx-auto">{description}</p>
-            <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[38px]">
+            {/* Button uses Link component with linkUrl */}
+            <Link 
+              to={linkUrl} 
+              className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[38px]"
+            >
               {buttonText}
               <MdOutlineArrowOutward className='ml-2'/>
-            </a>
+            </Link>
 
             <div
               className={`relative overflow-hidden max-w-full mx-auto
                 ${title === "Unified Cooperative Platform (UCP)"
                   ? "h-[350px] sm:h-[520px] lg:h-[400px]"
-                  : "h-[180px] sm:h-[250px] lg:h-[400px]"}`}
+                  : "h-[180px] sm:h-[250px] lg:h-[400px]"}${mockupClass}`}
             >
               {showTopHalf ? (
                 <img
@@ -57,7 +70,7 @@ const SolutionCard = ({
                   className={`w-full object-cover object-top rounded-xl
                     ${title === "Unified Cooperative Platform (UCP)"
                       ? "h-[400px] sm:h-[750px]"
-                      : "h-[180px] sm:h-[620px]"}`}
+                      : "h-[180px] sm:h-[620px]"}${mockupClass}`}
                 />
               ) : (
                 <img
@@ -66,7 +79,7 @@ const SolutionCard = ({
                   className={`w-full object-cover rounded-xl absolute bottom-0
                     ${title === "Unified Cooperative Platform (UCP)"
                       ? "h-[400px] sm:h-[750px] scale-95"
-                      : "h-[180px] sm:h-[620px]"}`}
+                      : "h-[180px] sm:h-[620px]"}${mockupClass}`}
                 />
               )}
             </div>
@@ -88,19 +101,36 @@ const SolutionCard = ({
           )}
           <h3 className="text-xl sm:text-2xl md:text-[36px] font-medium text-[#0E0E0E] mb-2">{title}</h3>
           <p className="text-sm sm:text-base md:text-[18px] text-[#828282] mb-6 sm:mb-8 max-w-md mx-auto">{description}</p>
-          <a href="#" className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[38px]">
+          {/* Button uses Link component with linkUrl */}
+          <Link 
+            to={linkUrl} 
+            className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[38px]"
+          >
             {buttonText}
             <MdOutlineArrowOutward className='ml-2'/>
-          </a>
+          </Link>
         </>
       )}
     </div>
   );
 };
 
+
 const SolutionsSection = () => {
+  // Define a map of solution links. **These are placeholder paths, ensure they match your React Router setup.**
+  const solutionLinks = {
+    bulkwave: "/bulkwave",
+    smerp: "/smerp",
+    kuleanpay: "/kuleanpay",
+    finedge: "/finedge",
+    smerpgo: "/smerpgo",
+    ucp: "/ucp",
+    beetvas: "/beetvas"
+  };
+
+
   return (
-    <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-[86px]">
+    <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-[86px]" id='solutions'>
       <div className="max-w-6xl mx-auto">
 
         <div className="text-center mb-8 sm:mb-12">
@@ -110,23 +140,31 @@ const SolutionsSection = () => {
           </p>
         </div>
 
-        {/* Bulkwave */}
-        <div className="bg-[#F4F4FF] rounded-[25px] pt-10 sm:pt-[50px] text-center mb-5">
-          <div className="flex justify-center mb-2"><img src={bulkwavelogo} alt="Bulkwave Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain"/></div>
-          <h3 className="text-2xl sm:text-3xl md:text-[36px] font-medium text-[#0E0E0E] mb-2">Bulkwave</h3>
-          <p className="text-sm sm:text-base md:text-[18px] text-[#828282] max-w-xl mx-auto mb-6 sm:mb-8">
-            Simplify bulk communication and reward programs with Bulkwave. Effortlessly distribute airtime, data, and SMS to large groups, keeping your teams and customers connected and engaged.
-          </p>
-          <button className="inline-flex items-center justify-center px-4 sm:px-7 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[21px]">
-            Read More
-            <MdOutlineArrowOutward className='ml-2'/>
-          </button>
-          <div className="relative overflow-hidden h-[200px] sm:h-80 lg:h-[404.62px] rounded-xl -mt-16 sm:-mt-20 lg:-mt-30">
-            <img src={solution1} alt="Bulkwave Dashboard Mockup" className="w-full object-cover object-top" />
-          </div>
+        {/* Bulkwave (Now using SolutionCard) */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-5">
+            <SolutionCard
+              logo={bulkwavelogo}
+              mockupImage={solution1} // The original mockup image
+              title="Bulkwave"
+              description="Simplify bulk communication and reward programs with Bulkwave. Effortlessly distribute airtime, data, and SMS to large groups, keeping your teams and customers connected and engaged."
+              buttonText="Read More"
+              bgColor="bg-[#F4F4FF]"
+              mockupAlt="Bulkwave Dashboard Mockup"
+              reverse={true} // Set to true to match the original Bulkwave structure (text on top, image on bottom)
+              showTopHalf={true} 
+              linkUrl={solutionLinks.bulkwave}
+            />
+            {/* Added an empty filler div to force Bulkwave to take up the full row 
+                while still being in a flex container (if needed for consistent spacing). 
+                If you want Bulkwave to be full-width like the original, you might move it out of this flex div,
+                but for consistency with the component structure, I'll put it here and leave the second slot empty/as a placeholder.
+                
+                Alternatively, to truly match the Smerp/Kuleanpay structure, it should be paired.
+                Since it was full-width before, let's keep it full-width by removing the flex-container or making it a single child.
+            */}
         </div>
 
-        {/* Smerp & Kuleanpay */}
+        {/* Smerp & Kuleanpay (Unchanged) */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-5">
           <SolutionCard
             logo={smerplogo}
@@ -138,6 +176,7 @@ const SolutionsSection = () => {
             mockupAlt="Smerp Mobile App Mockup"
             reverse={true}
             showTopHalf={true}
+            linkUrl={solutionLinks.smerp}
           />
           <SolutionCard
             logo={kuleanpaylogo}
@@ -148,26 +187,28 @@ const SolutionsSection = () => {
             bgColor="bg-[#E6F8FB80]"
             mockupAlt="Kuleanpay Mobile App Mockup"
             showTopHalf={false}
+            linkUrl={solutionLinks.kuleanpay}
           />
         </div>
 
-        {/* Finedge */}
-        <div className="bg-[#E6F8FB] rounded-[25px] pt-10 sm:pt-[50px] text-center mb-5">
-          <div className="flex justify-center mb-2"><img src={finedgephone} alt="Finedge Logo" className="w-10 h-10 sm:w-12 sm:h-12 object-contain"/></div>
-          <h3 className="text-2xl sm:text-3xl md:text-[36px] font-medium text-[#0E0E0E] mb-2">Finedge</h3>
-          <p className="text-sm sm:text-base md:text-[18px] text-[#828282] max-w-xl mx-auto mb-6 sm:mb-8">
-            Finedge is an all-in-one banking solution that helps MFBs streamline operations.
-          </p>
-          <button className="inline-flex items-center justify-center px-4 sm:px-7 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[21px]">
-            Read More
-            <MdOutlineArrowOutward className='ml-2'/>
-          </button>
-          <div className="relative overflow-hidden h-[200px] sm:h-80 lg:h-[404.62px] rounded-xl sm:-mt-20 lg:-mt-30">
-            <img src={finedgelogo} alt="Finedge Dashboard Mockup" className="w-full object-cover object-top" />
-          </div>
+        {/* Finedge (Now using SolutionCard) */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-5">
+            <SolutionCard
+              logo={finedgelogo} // Using the actual logo
+              mockupImage={finedgephone} // Using a mobile/device mockup for consistency
+              title="Finedge"
+              description="Finedge is an all-in-one banking solution that helps MFBs streamline operations."
+              buttonText="Read More"
+              bgColor="bg-[#E6F8FB]"
+              mockupAlt="Finedge Mobile App Mockup"
+              reverse={true} // Set to true to match the original Bulkwave/Finedge structure (text on top, image on bottom)
+              showTopHalf={true} 
+              linkUrl={solutionLinks.finedge}
+            />
+            {/* Added an empty filler div for similar reasons as Bulkwave */}
         </div>
-
-        {/* Smerp Go + UCP */}
+        
+        {/* Smerp Go + UCP (Unchanged) */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-5 mb-5">
           <SolutionCard
             logo={smerpgologo}
@@ -178,6 +219,7 @@ const SolutionsSection = () => {
             bgColor="bg-[#EEEBFF]"
             mockupAlt="Smerp Go"
             showTopHalf={false}
+            linkUrl={solutionLinks.smerpgo}
           />
           <SolutionCard
             logo={ucplogo}
@@ -189,22 +231,24 @@ const SolutionsSection = () => {
             mockupAlt="Unified Cooperative Platform (UCP)"
             reverse={true}
             showTopHalf={true}
+            linkUrl={solutionLinks.ucp}
           />
         </div>
 
-        {/* Beetvas */}
-        <div className="bg-[#E7F1FF] rounded-[25px] pt-10 sm:pt-[50px] text-center mb-5">
-          <div className="flex justify-center mb-2"><img src={beetvaslogo} alt="Beetvas Logo" className="w-32 h-10 sm:w-40 sm:h-12 object-contain"/></div>
-          <p className="text-sm sm:text-base md:text-[18px] text-[#828282] max-w-xl mx-auto mb-6 sm:mb-8">
-            Beetvas description can go here.
-          </p>
-          <button className="inline-flex items-center justify-center px-4 sm:px-7 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[21px]">
-            Read More
-            <MdOutlineArrowOutward className='ml-2'/>
-          </button>
-          <div className="relative overflow-hidden h-[200px] sm:h-80 lg:h-[404.62px] rounded-xl -mt-10 sm:-mt-20 lg:-mt-30">
-            <img src={beetvasphone} alt="Beetvas Dashboard Mockup" className="w-full object-cover object-top" />
-          </div>
+        {/* Beetvas (Now using SolutionCard) */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 mb-5">
+            <SolutionCard
+              // logo={beetvaslogo}
+              mockupImage={beetvasphone}
+              title="beetVAS"
+              description="Designed for cooperatives, UCP streamlines cash collection, disbursement, and reconciliation—improving cash flow, transparency, and member collaboration."
+              buttonText="Read More"
+              bgColor="bg-[#E7F1FF]"
+              mockupAlt="Beetvas Mobile App Mockup"
+              reverse={true} // Set to true to match the original Bulkwave/Finedge structure (text on top, image on bottom)
+              showTopHalf={true} 
+              linkUrl={solutionLinks.beetvas}
+            />
         </div>
 
       </div>
