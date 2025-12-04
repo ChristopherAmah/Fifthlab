@@ -126,18 +126,24 @@ export default function HeroSection() {
                 style={{
                   // 2. Use the responsive cardWidth for the container
                   width: `${cardWidth}px`, 
-                  transform: `translateY(${curveY}px) rotate(${rotate}deg) scale(${scale})`,
+                  // transform: `translateY(${curveY}px) rotate(${rotate}deg) scale(${scale})`,
                   zIndex,
                 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
+                animate={{ 
+                  y: curveY, // translateY
+                  rotate: rotate, 
+                  scale: scale, 
+                }}
+                whileHover={{ scale: scale * 1.10 }} // ✅ Apply hover scale *on the div*
+                transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 <img
                   src={img}
                   alt={`hero-${index}`}
                   // 3. Use the responsive cardWidth for the image
-                  className={`w-[${cardWidth}px] h-auto object-contain transform transition duration-300 hover:scale-110`} 
+                  className={`w-[${cardWidth}px] h-auto object-contain`} 
                   // Fallback for Tailwind CSS if dynamic class isn't parsed correctly:
-                  style={{ width: `${cardWidth}px` }} 
+                  style={{ width: `${cardWidth}px` }}
                 />
               </motion.div>
             );

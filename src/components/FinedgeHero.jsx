@@ -64,7 +64,7 @@ const FinEdgeSection = () => {
             w-52 h-60
             sm:w-64 sm:h-72
             md:w-80 md:h-96
-            lg:w-auto lg:h-[32rem]
+            lg:w-auto lg:h-128
             overflow-hidden rounded-xl
           ">
             <img 

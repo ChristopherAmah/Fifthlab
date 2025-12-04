@@ -9,13 +9,13 @@ const MissionVisionSection = () => {
         
         {/* Mission Card */}
         <div className="w-full lg:w-1/2">
-          <div className="relative overflow-hidden rounded-2xl aspect-[16/9] lg:aspect-[4/4]">
+          <div className="relative overflow-hidden rounded-2xl aspect-video lg:aspect-4/4">
             <img 
               src={mission} 
               alt="Hands assembling puzzle pieces" 
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent flex flex-col justify-end text-center p-6 sm:p-8 text-white">
+            <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent flex flex-col justify-end text-center p-6 sm:p-8 text-white">
               <h3 className="text-2xl sm:text-3xl lg:text-[48px] font-medium mb-2 sm:mb-3">
                 Our Mission
               </h3>
@@ -29,13 +29,13 @@ const MissionVisionSection = () => {
 
         {/* Vision Card */}
         <div className="w-full lg:w-1/2">
-          <div className="relative overflow-hidden rounded-2xl aspect-[16/9] lg:aspect-[4/4]">
+          <div className="relative overflow-hidden rounded-2xl aspect-video lg:aspect-4/4">
             <img 
               src={vision} 
               alt="Person looking through binoculars" 
               className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent flex flex-col justify-end text-center p-6 sm:p-8 text-white">
+            <div className="absolute inset-0 bg-linear-to-t from-gray-900 via-gray-900/40 to-transparent flex flex-col justify-end text-center p-6 sm:p-8 text-white">
               <h3 className="text-2xl sm:text-3xl lg:text-[48px] font-medium mb-2 sm:mb-3">
                 Our Vision
               </h3>

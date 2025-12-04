@@ -37,7 +37,7 @@ const KuleanPaySection = () => {
 
         {/* --- Image Section --- */}
         <div className="lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0">
-          <div className="w-56 sm:w-64 md:w-80 lg:w-auto h-64 sm:h-72 md:h-80 lg:h-[32rem] overflow-hidden rounded-xl">
+          <div className="w-56 sm:w-64 md:w-80 lg:w-auto h-64 sm:h-72 md:h-80 lg:h-128 overflow-hidden rounded-xl">
             <img 
               src={smerphero}
               alt="KuleanPay Main App Screen Mockup" 

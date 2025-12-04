@@ -93,7 +93,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] leading-snug">
-            <MapPin size={50} />
+            <MapPin className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" />
             <a 
               href="https://maps.google.com/?q=7+Joshua+Ebun+Ojo+Cl,+Lekki+Phase+1,+Lagos"
               target="_blank"
