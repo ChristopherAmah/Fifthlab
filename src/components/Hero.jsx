@@ -135,7 +135,7 @@ export default function HeroSection() {
                   src={img}
                   alt={`hero-${index}`}
                   // 3. Use the responsive cardWidth for the image
-                  className={`w-[${cardWidth}px] h-auto object-contain`} 
+                  className={`w-[${cardWidth}px] h-auto object-contain transform transition duration-300 hover:scale-110`} 
                   // Fallback for Tailwind CSS if dynamic class isn't parsed correctly:
                   style={{ width: `${cardWidth}px` }} 
                 />
@@ -147,7 +147,7 @@ export default function HeroSection() {
 
       {/* 🔵 TEXT CONTENT (Kept separate for clarity) */}
       <div className="relative z-10 max-w-4xl mx-auto mt-50 sm:mt-50 md:mt-70 mb-20">
-        <h1 className="text-3xl sm:text-4xl md:text-[62px] font-medium text-[#0E0E0E] mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-[62px] font-medium text-[#0E0E0E] mb-6">
           Building the Future of <br className="hidden sm:inline" /> Integrated Solutions.
         </h1>
 

@@ -40,7 +40,7 @@ const ImpactSection = () => {
               <img
                 src={logo.src}
                 alt={logo.alt}
-                className="w-20 h-10 object-contain sm:w-25"
+                className="w-20 h-20 object-contain sm:w-25"
               />
             </div>
           ))}

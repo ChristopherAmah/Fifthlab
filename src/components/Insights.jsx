@@ -116,12 +116,12 @@ const InsightsSection = () => {
             {(loading ? insightsData : apiPosts).map((item, index) => (
               <SwiperSlide
                 key={index}
-                className="w-[260px]! sm:w-[300px]! md:w-[400px]! lg:w-[441px]!"
+                className="w-[260px]! sm:w-[300px]! md:w-[400px]! lg:w-[400px]!"
               >
                 {({ isActive }) => (
                   <div
                     onClick={() => !loading && handlePostClick(item)}
-                    className={`relative h-[280px] sm:h-[400px] md:h-[500px] rounded-[30px] sm:rounded-[45px] overflow-hidden transition-all duration-500 ease-out cursor-pointer ${
+                    className={`relative h-[280px] sm:h-[400px] md:h-[450px] rounded-[30px] sm:rounded-[45px] overflow-hidden transition-all duration-500 ease-out cursor-pointer ${
                       isActive 
                         ? 'scale-100 z-10' 
                         : 'scale-[0.85] opacity-70 saturate-50'

@@ -12,7 +12,7 @@ const KuleanPaySection = () => {
         <div className="lg:w-1/2 text-center lg:text-left">
 
           {/* Logo */}
-          <div className="flex items-center justify-center lg:justify-start gap-3 bg-[#F1F2FF] px-4 py-2 rounded-full w-fit mx-auto lg:mx-0 mb-6">
+          <div className="flex items-center justify-center lg:justify-start gap-3 bg-[#F1F2FF] px-4 py-2 rounded-full w-fit mx-auto lg:mx-0 mb-3">
             <img src={bulkwavelogo} alt="Bulkwave Logo" className="h-8 w-auto" />
             <span className="text-lg sm:text-[20.15px] font-semibold text-[#242424]">
               Bulkwave
@@ -22,14 +22,14 @@ const KuleanPaySection = () => {
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[64px] 
                          font-medium text-[#0E0E0E]
-                          mb-4 sm:mb-6">
+                          mb-1">
             Fast, Seamless <br />
             Bulk Messaging, <br />
             Data & Airtime.
           </h1>
 
           {/* CTA */}
-          <div className="mt-6 sm:mt-8">
+          <div className="mt-4 sm:mt-5">
             <a 
               href="#" 
               className="inline-flex items-center text-lg sm:text-[19.65px] 

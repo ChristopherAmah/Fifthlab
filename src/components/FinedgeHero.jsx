@@ -14,7 +14,7 @@ const FinEdgeSection = () => {
 
           {/* Logo/Brand */}
           <div className="flex items-center justify-center lg:justify-start gap-3 
-            bg-[#F1F2FF] px-3 sm:px-4 py-2 rounded-full w-fit mb-3 sm:mb-6">
+            bg-[#F1F2FF] px-3 sm:px-4 py-2 rounded-full w-fit mb-3">
             
             <img 
               src={finedgelogo} 
@@ -33,7 +33,7 @@ const FinEdgeSection = () => {
             sm:text-3xl sm:leading-tight
             md:text-4xl
             lg:text-[64px] lg:leading-tight
-            font-medium text-[#0E0E0E] tracking-tight mb-4 sm:mb-6
+            font-medium text-[#0E0E0E] tracking-tight mb-1
           ">
             Your <br />
             Finances <br />
@@ -42,7 +42,7 @@ const FinEdgeSection = () => {
           </h1>
 
           {/* Call To Action */}
-          <div className="mt-4 sm:mt-6">
+          <div className="mt-4 sm:mt-5">
             <a
               href="#"
               className="inline-flex items-center 

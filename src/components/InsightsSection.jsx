@@ -26,6 +26,10 @@ const InsightsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [categories, setCategories] = useState(["All"]);
   const [currentPage, setCurrentPage] = useState(1);
+  
+  // 💡 NEW STATE FOR SEARCH
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const navigate = useNavigate();
 
@@ -70,21 +74,29 @@ const InsightsSection = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  // 💡 Scroll to the top whenever the page number changes
+  // 💡 Scroll to the top whenever the page number changes or search/category changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
-  // ✅ FILTER LOGIC
-  const filtered =
-    selectedCategory === "All"
-      ? posts
-      : posts.filter((p) => p.category === selectedCategory);
+  // ✅ FILTER LOGIC: UPDATED TO INCLUDE SEARCH
+  const filtered = posts.filter((p) => {
+    // 1. Filter by Category
+    const categoryMatch = selectedCategory === "All" || p.category === selectedCategory;
 
-  // ✅ RESET TO PAGE 1 WHEN CATEGORY CHANGES
+    // 2. Filter by Search Term (case-insensitive on title)
+    const normalizedSearchTerm = searchTerm.toLowerCase().trim();
+    const searchMatch = normalizedSearchTerm === "" || 
+      p.titleMain.toLowerCase().includes(normalizedSearchTerm) ||
+      p.titleSub.toLowerCase().includes(normalizedSearchTerm);
+
+    return categoryMatch && searchMatch;
+  });
+
+  // ✅ RESET TO PAGE 1 WHEN CATEGORY OR SEARCH TERM CHANGES
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedCategory]);
+  }, [selectedCategory, searchTerm]);
 
   // ✅ PAGINATION LOGIC
   const totalPages = Math.ceil(filtered.length / POSTS_PER_PAGE);
@@ -96,6 +108,15 @@ const InsightsSection = () => {
 
   // ✅ FEATURED POST: first post of selected category
   const featuredPost = filtered[0];
+  
+  // 💡 SEARCH HANDLER
+  const handleSearchToggle = () => {
+      setIsSearchVisible(!isSearchVisible);
+      // Optional: Clear search term when closing the input
+      if (isSearchVisible) {
+          setSearchTerm('');
+      }
+  };
 
   return (
     <section className="font-sans py-12 md:py-24 px-4 relative">
@@ -111,22 +132,59 @@ const InsightsSection = () => {
           </p>
         </header>
 
-        {/* CATEGORY FILTER */}
+        {/* CATEGORY FILTER & SEARCH (UPDATED) */}
         <div className="flex justify-start md:justify-center mb-10 overflow-x-auto whitespace-nowrap scrollbar-hide">
           <div className="flex items-center bg-gray-100 rounded-full p-2 space-x-2">
+            
+            
+
+            {/* CATEGORY BUTTONS */}
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => {
+                    setSelectedCategory(cat);
+                    // Hide search bar if a category is clicked
+                    setIsSearchVisible(false); 
+                    setSearchTerm('');
+                }}
                 className={`px-4 py-2 text-sm rounded-full transition ${
-                  selectedCategory === cat
+                  selectedCategory === cat && !isSearchVisible
                     ? "bg-black text-white"
                     : "text-gray-600 hover:bg-gray-300"
                 }`}
+                // Hide All button if search bar is open to save space
+                style={{ display: isSearchVisible && cat === "All" ? 'none' : 'inline-block' }}
               >
                 {capitalizeWords(cat)}
               </button>
             ))}
+
+            {/* SEARCH ICON (NEW) */}
+            <button
+                onClick={handleSearchToggle}
+                className={`flex items-center justify-center w-10 h-10 text-sm rounded-full transition ${
+                  isSearchVisible ? "bg-black text-white" : "text-gray-600 hover:bg-gray-300"
+                }`}
+            >
+                {/* SVG for Search Icon (Magnifying Glass) */}
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </button>
+
+            {/* SEARCH INPUT (NEW, conditionally rendered) */}
+            {isSearchVisible && (
+                <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="Search posts..."
+                    className="px-4 py-2 text-sm rounded-full bg-white border border-gray-300 transition duration-300 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-black"
+                    // Optional: auto-focus when input appears
+                    autoFocus
+                />
+            )}
           </div>
         </div>
 

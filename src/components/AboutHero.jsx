@@ -3,7 +3,7 @@ import aboutvideo from '../assets/aboutvideo.mp4';
 
 const FifthlabSection = () => {
   return (
-    <section className="pt-24 sm:pt-32 lg:pt-[182.25px] px-4 sm:px-6 lg:px-[139.07px]">
+    <section className="pt-24 sm:pt-12 lg:pt-20 px-4 sm:px-6 lg:px-[139.07px]">
       {/* Outer Container */}
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         
@@ -12,8 +12,8 @@ const FifthlabSection = () => {
           
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[75px] font-medium text-[#0E0E0E] leading-tight mb-6 text-center lg:text-left">
-            We Are <br />
-            <span className="text-[#0E0E0E]">Fifthlab</span>
+            We Are Fifthlab<br />
+            {/* <span className="text-[#0E0E0E]">Fifthlab</span> */}
           </h1>
           
           {/* Introductory Text */}
@@ -26,11 +26,11 @@ const FifthlabSection = () => {
           </p>
           
           {/* Statistics Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center lg:text-left">
+          <div className="grid grid-cols-3 sm:grid-cols-3 gap-8 text-center lg:mx-auto">
             
             {/* Stat 1 */}
             <div>
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#00B4D8] mb-1">
+              <p className="text-3xl sm:text-4xl lg:text-4xl font-medium text-[#00B4D8] mb-1">
                 50,000+
               </p>
               <p className="text-sm text-[#7C7C7C]">
@@ -41,7 +41,7 @@ const FifthlabSection = () => {
             
             {/* Stat 2 */}
             <div>
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#00B4D8] mb-1">
+              <p className="text-3xl sm:text-4xl lg:text-4xl font-medium text-[#00B4D8] mb-1">
                 250+
               </p>
               <p className="text-sm text-[#7C7C7C]">
@@ -52,7 +52,7 @@ const FifthlabSection = () => {
             
             {/* Stat 3 */}
             <div>
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-medium text-[#00B4D8] mb-1">
+              <p className="text-3xl sm:text-4xl lg:text-4xl font-medium text-[#00B4D8] mb-1">
                 97%
               </p>
               <p className="text-sm text-[#7C7C7C]">
@@ -66,7 +66,7 @@ const FifthlabSection = () => {
         
         {/* Right Column: Video */}
         <div className="w-full lg:w-1/2">
-          <div className="relative overflow-hidden rounded-2xl shadow-xl w-full aspect-video">
+          <div className="relative overflow-hidden rounded-2xl shadow-xl w-full lg:h-[400px] aspect-video">
             <video
               src={aboutvideo}
               className="w-full h-full object-cover"

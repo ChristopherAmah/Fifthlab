@@ -81,7 +81,7 @@ const AmazingTeamSection = () => {
       <div className="max-w-7xl mx-auto">
         
         {/* Top Text Block */}
-        <div className="flex flex-col lg:flex-row justify-between gap-[274.21px] mb-12">
+        <div className="flex flex-col lg:flex-row justify-between  mb-12">
           <div className="lg:w-1/2">
             <h2 className="text-[54px] font-medium text-[#03045E] leading-tight tracking-tighter mb-4">
               Amazing Team <br />
@@ -89,7 +89,7 @@ const AmazingTeamSection = () => {
             </h2>
           </div>
           <div className="lg:w-2/3 flex items-start">
-            <p className="text-[18px] text-[#596780] max-w-xl">
+            <p className="text-[18px] text-[#596780] max-w-md ms-auto py-2">
               Our team consists of a group of talented and creative people who 
               work hard to solve real problems and change how people live and 
               work. We’re big enough to handle most challenges and small 

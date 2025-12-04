@@ -12,13 +12,13 @@ const KuleanPaySection = () => {
         <div className="lg:w-1/2 text-center lg:text-left flex flex-col items-center lg:items-start">
           
           {/* Logo/Brand */}
-          <div className="flex items-center justify-center lg:justify-start gap-3 bg-[#F1F2FF] px-4 py-2 rounded-full w-fit mb-4 sm:mb-6">
+          <div className="flex items-center justify-center lg:justify-start gap-3 bg-[#F1F2FF] px-4 py-2 rounded-full w-fit mb-3">
             <img src={Smerpgologo} alt="KuleanPay Logo" className="h-8 w-auto" />
             <span className="text-lg sm:text-[20.15px] font-sans font-semibold text-[#242424]">Smerpgo</span>
           </div>
           
           {/* Main Headline */}
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[64px] font-medium text-[#0E0E0E] leading-snug sm:leading-tight lg:leading-tight tracking-tight mb-4 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[64px] font-medium text-[#0E0E0E] mb-1">
             Real-Time, <br />
             Smart <br />
             Inventory <br />
@@ -26,7 +26,7 @@ const KuleanPaySection = () => {
           </h1>
           
           {/* Call to Action */}
-          <div className="mt-4 sm:mt-6">
+          <div className="mt-4 sm:mt-5">
             <a 
               href="#" 
               className="inline-flex items-center text-base sm:text-lg md:text-[19.65px] font-medium text-[#00B4D8] hover:text-[#00B4D8] transition duration-150 ease-in-out"
