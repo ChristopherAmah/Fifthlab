@@ -32,6 +32,7 @@ const KuleanPayScroll = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Scroll sync logic
   const handleScroll = () => {
     if (isMobile) return;
 
@@ -48,6 +49,7 @@ const KuleanPayScroll = () => {
     setCurrentIndex(index);
   };
 
+  // Detect mobile & add scroll listener
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -61,14 +63,24 @@ const KuleanPayScroll = () => {
     };
   }, [isMobile]);
 
+  // Autoplay effect for desktop
+  useEffect(() => {
+    if (isMobile) return; // No autoplay on mobile
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % sections.length);
+    }, 4000); // Change slide every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [isMobile]);
+
   return (
     <section className="w-full py-10">
-      {/* DESKTOP VIEW */}
       {!isMobile ? (
         <div
           id="scroll-wrapper"
           className="mx-auto grid grid-cols-2 gap-10 px-6 md:px-16 lg:px-32 relative"
-          style={{ minHeight: `${sections.length * 100}vh` }} // Enough height for scroll
+          style={{ minHeight: `${sections.length * 100}vh` }}
         >
           {/* LEFT IMAGE */}
           <div className="sticky top-24 h-[80vh] rounded-[20px] overflow-hidden">
@@ -82,15 +94,19 @@ const KuleanPayScroll = () => {
           {/* RIGHT SIDE */}
           <div className="relative">
             <div className="sticky top-24 space-y-6 md:space-y-10">
-              {/* Fixed Heading */}
               <h1 className="text-2xl sm:text-3xl md:text-[42px] font-medium text-[#03045E] leading-snug md:leading-tight mb-6 md:mb-10">
                 Advanced Core Banking Designed for Modern Financial Institutions
               </h1>
 
-              {/* Scroll-Sync Sections */}
               <div className="flex flex-col space-y-6 md:space-y-10">
                 {sections.map((sec, idx) => (
-                  <div key={idx} className="flex gap-4 md:gap-5 items-start">
+                  <div
+                    key={idx}
+                    className={`flex gap-4 md:gap-5 items-start cursor-pointer transition-all duration-300 ${
+                      idx === currentIndex ? "opacity-100" : "opacity-70"
+                    }`}
+                    onClick={() => setCurrentIndex(idx)} // Update currentIndex on click
+                  >
                     {/* Highlight Bar */}
                     <div
                       className={`w-1 rounded-full h-16 md:h-20 transition-all duration-500 ${
@@ -102,9 +118,7 @@ const KuleanPayScroll = () => {
                     <div>
                       <h3
                         className={`text-lg sm:text-[20px] md:text-[22px] font-medium mb-1 transition-all duration-500 ${
-                          idx === currentIndex
-                            ? "text-[#000000]"
-                            : "text-[#848687]"
+                          idx === currentIndex ? "text-[#000000]" : "text-[#848687]"
                         }`}
                       >
                         {sec.title}
@@ -124,10 +138,9 @@ const KuleanPayScroll = () => {
           </div>
         </div>
       ) : (
-        /* MOBILE VIEW */
         <div className="flex flex-col gap-8 px-4 sm:px-6 max-w-xl mx-auto">
           <h1 className="text-2xl sm:text-3xl font-semibold text-[#03045E] leading-snug mb-4">
-            Fast, Seamless Daily Payments for Individuals and Businesses
+            Advanced Core Banking Designed for Modern Financial Institutions
           </h1>
 
           {sections.map((sec, i) => (
