@@ -8,6 +8,11 @@ import stanbic from '../assets/stanbic.png';
 import itex from '../assets/itex.png';
 import firstbank from '../assets/firstbank.png';
 import morebg from '../assets/morebg.png';
+import remita from '../assets/remita.webp';
+import providus from '../assets/providus.png';
+import covenant from '../assets/covenant.png';
+import npf from '../assets/npf.png';
+import firs from '../assets/firs.png';
 
 const ImpactSection = () => {
   const logos = [
@@ -18,6 +23,11 @@ const ImpactSection = () => {
     { src: stanbic, alt: 'Stanbic Bank' },
     { src: wema, alt: 'Wema Bank' },
     { src: trustbanck, alt: 'TrustBanc' },
+    { src: remita, alt: 'Remita' },
+    { src: providus, alt: 'Providus' },
+    { src: covenant, alt: 'Covenant mfb' },
+    { src: npf, alt: 'Nigeria Police Force mfb' },
+    { src: firs, alt: 'FIRS mfb' },
     { src: uba, alt: 'UBA' },
   ];
 

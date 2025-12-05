@@ -22,9 +22,11 @@ export default function JoinCommunity() {
               className="grow px-4 py-3 bg-transparent text-white placeholder-white text-[15px] sm:text-[16px] focus:outline-none"
             />
 
-            <button className="bg-white text-[#08B6D8] font-medium px-4 sm:px-6 sm:py-3 rounded-md hover:bg-gray-200 transition">
-              Join Now
-            </button>
+            <a href="mailto:hello@thefifthlab.com">
+              <button className="bg-white text-[#08B6D8] font-medium px-4 sm:px-6 sm:py-3 rounded-md hover:bg-gray-200 transition">
+                Join Now
+              </button>
+            </a>
           </div>
         </div>
 
