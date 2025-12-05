@@ -38,28 +38,28 @@ const ImpactSection = () => {
     >
       <div className="relative z-10">
 
-        {/* Logos */}
-        <div className="flex flex-wrap items-center bg-[#EDEDEDB2] gap-x-10 gap-y-4 mb-4 justify-center">
-          {logos.map((logo, index) => (
-            <div
-              key={index}
-              className="h-10 flex items-center py-12"
-              // Smaller screens adjustments
-              style={{ minWidth: '3rem' }}
-            >
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="w-20 h-20 object-contain sm:w-25"
-              />
-            </div>
-          ))}
+        {/* ✅ AUTO-SCROLLING LOGOS */}
+        <div className="overflow-hidden bg-[#EDEDEDB2] mb-4">
+          <div className="flex w-max animate-scroll gap-x-10">
+            {[...logos, ...logos].map((logo, index) => (
+              <div
+                key={index}
+                className="h-10 flex items-center py-12"
+                style={{ minWidth: '3rem' }}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="w-20 h-20 object-contain sm:w-25"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Main Content Grid */}
+        {/* ✅ MAIN CONTENT GRID — UNTOUCHED */}
         <div className="grid grid-cols-1 lg:grid-cols-2 px-8 sm:px-[84.97px] pb-[51.1px] gap-y-[28.56px]">
 
-          {/* Left Column */}
           <div className="flex flex-col justify-start py-6">
             <h1
               className="text-5xl font-medium text-black sm:text-[121.44px]"
@@ -69,7 +69,6 @@ const ImpactSection = () => {
             </h1>
           </div>
 
-          {/* Top Right Box */}
           <div>
             <div className="bg-[#0090AD] text-white rounded-[66.42px] h-full flex items-center justify-center">
               <p className="text-base text-center font-normal py-8 px-6 sm:text-[32px] sm:py-12 sm:px-12">
@@ -78,8 +77,6 @@ const ImpactSection = () => {
             </div>
           </div>
 
-
-          {/* Bottom Left Box */}
           <div>
             <div className="bg-[#E6F8FB] text-[#121212] rounded-[66.42px] h-full flex items-center justify-center">
               <p className="text-base text-center font-normal py-8 px-6 sm:text-[26px] sm:py-12 sm:px-12">
@@ -88,12 +85,8 @@ const ImpactSection = () => {
             </div>
           </div>
 
-
-          {/* Right Column */}
           <div className="flex flex-col justify-end items-end">
-            <h1
-              className="text-5xl font-medium text-[#000000] leading-none sm:text-[133.61px]"
-            >
+            <h1 className="text-5xl font-medium text-[#000000] leading-none sm:text-[133.61px]">
               Do<br /><span className="text-[#15949B]">more</span>
             </h1>
           </div>
@@ -101,6 +94,24 @@ const ImpactSection = () => {
         </div>
 
       </div>
+
+      {/* ✅ SCROLL ANIMATION STYLE */}
+      <style>
+        {`
+          @keyframes scroll {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+
+          .animate-scroll {
+            animation: scroll 40s linear infinite;
+          }
+        `}
+      </style>
     </div>
   );
 };

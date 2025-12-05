@@ -16,43 +16,43 @@ import beetvasIcon from "../assets/beetnav.svg";
 const solutionsData = [
   {
     name: "FinEdge",
-    description: "AI Powered Core Banking Suite.",
+    description: "AI Powered Core Banking Suite",
     icon: finedgeIcon,
     href: "/finedge",
   },
   {
     name: "Bulkwave",
-    description: "Bulk Airtime, Data & SMS.",
+    description: "Bulk Airtime, Data & SMS",
     icon: bulkwaveIcon,
     href: "/bulkwave",
   },
   {
     name: "Smerp",
-    description: "ERP Solution For Businesses.",
+    description: "ERP Solution For Businesses",
     icon: smerpIcon,
     href: "/smerp",
   },
   {
     name: "Smerp Go",
-    description: "Pocket ERP Solution For Online Stores.",
+    description: "Pocket ERP Solution For Online Stores",
     icon: smerpGoIcon,
     href: "/smerpgo",
   },
   {
     name: "KuleanPay",
-    description: "Secure Payment Solution.",
+    description: "Secure Payment Solution",
     icon: kuleanpayIcon,
     href: "/kuleanpay",
   },
   {
     name: "Unified Cooperative Platform (UCP)",
-    description: "Simplified Cooperative Management.",
+    description: "Simplified Cooperative Management",
     icon: ucpIcon,
     href: "/ucp",
   },
   {
     name: "BeetVAS",
-    description: "Airtime & Data Vending API Suite.",
+    description: "Airtime & Data Vending API Suite",
     icon: beetvasIcon,
     href: "/beetvas",
   },
@@ -75,10 +75,10 @@ const SolutionItem = ({ icon, name, description, href, closeMenu }) => (
     </div>
 
     <div>
-      <p className="font-semibold text-gray-900 text-[15px] leading-snug">
+      <p className="font-medium text-[#111B29] text-[16px]">
         {name}
       </p>
-      <p className="text-gray-500 text-sm mt-0.5">
+      <p className="text-[#79869B] text-[14px]">
         {description}
       </p>
     </div>
@@ -125,8 +125,8 @@ export default function Navbar() {
               />
 
               {/* Dropdown Panel */}
-              <div className="bg-white shadow-xl border border-gray-100 rounded-xl overflow-hidden w-[680px] pt-4 pb-3">
-                <h3 className="text-xs font-semibold uppercase text-gray-500 tracking-wider px-6 mb-3">
+              <div className="bg-[#FFFFFF] shadow-xl border border-gray-100 rounded-2xl overflow-hidden w-[750px] pt-4 pb-3">
+                <h3 className="text-xs font-medium uppercase text-[#97A3B7] tracking-wider px-6 mb-3">
                   SOLUTIONS
                 </h3>
 
