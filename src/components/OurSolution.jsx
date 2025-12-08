@@ -182,7 +182,7 @@ const SolutionsSection = () => {
             logo={kuleanpaylogo}
             mockupImage={kuleanpayphone}
             title="Kuleanpay"
-            description="Kuleanpay is a smart AI-driven escrow engine that makes payments secure, transparent, and seamless."
+            description="Kuleanpay is a smart AI driven escrow engine that makes payments secure, transparent, and seamless - giving businesses confidence and customers total peace of mind."
             buttonText="Read More"
             bgColor="bg-[#E6F8FB80]"
             mockupAlt="Kuleanpay Mobile App Mockup"
@@ -197,7 +197,7 @@ const SolutionsSection = () => {
               logo={finedgelogo} // Using the actual logo
               mockupImage={finedgephone} // Using a mobile/device mockup for consistency
               title="Finedge"
-              description="Finedge is an all-in-one banking solution that helps MFBs streamline operations."
+              description="Finedge is an all-in-one banking solution that helps MFBs streamline operations, grow their reach, and drive financial inclusion."
               buttonText="Read More"
               bgColor="bg-[#E6F8FB]"
               mockupAlt="Finedge Mobile App Mockup"
@@ -214,7 +214,7 @@ const SolutionsSection = () => {
             logo={smerpgologo}
             mockupImage={smerpgophone}
             title="Smerp Go"
-            description="Take control of your business operations with SMERP Go."
+            description="Take control of your business operations with SMERP, our comprehensive Enterprise Resource Planning (ERP) software.  SMERP streamlines tasks like inventory management."
             buttonText="Read More"
             bgColor="bg-[#EEEBFF]"
             mockupAlt="Smerp Go"
@@ -225,7 +225,7 @@ const SolutionsSection = () => {
             logo={ucplogo}
             mockupImage={ucpphone}
             title="Unified Cooperative Platform (UCP)"
-            description="Designed for cooperatives, UCP streamlines cash collection, disbursement, and reconciliation."
+            description="Designed for cooperatives, UCP streamlines cash collection, disbursement, and reconciliation—improving cash flow, transparency, and member collaboration."
             buttonText="Read More"
             bgColor="bg-[#EDF4FF]"
             mockupAlt="Unified Cooperative Platform (UCP)"

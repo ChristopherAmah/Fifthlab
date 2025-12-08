@@ -159,7 +159,7 @@ export default function Navbar() {
       {/* ---------------- DESKTOP CTA ---------------- */}
       <div className="hidden md:flex">
         <Link to="/contact-us">
-          <button className="bg-cyan-500 text-white font-medium text-[16px] px-5 py-2 rounded-full hover:bg-[#00B4D8] transition">
+          <button className="bg-[#00B4D8] text-white font-medium text-[16px] px-5 py-2 rounded-full hover:bg-[#00B4D8] transition">
             Get In Touch →
           </button>
         </Link>

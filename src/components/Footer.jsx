@@ -7,17 +7,16 @@ import ndpr from "../assets/ndpr.png";
 import darklogo from "../assets/darklogo.png";
 
 export default function Footer() {
-  // Scroll to top function
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <footer className="bg-black text-white pt-16 pb-8 px-5 sm:px-8 md:px-20">
       
       {/* Top Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[5fr_1fr_1fr_1fr] gap-12">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-[5fr_1fr_1fr_1fr] gap-12">
 
-        {/* Logo + Address */}
-        <div className="text-center sm:text-left">
+        {/* Logo + Address (FULL WIDTH ON MOBILE) */}
+        <div className="col-span-2 md:col-span-1 text-center sm:text-left">
           <div className="flex sm:block justify-center sm:justify-start">
             <img src={darklogo} alt="fifthlab" className="h-8 mb-4" />
           </div>

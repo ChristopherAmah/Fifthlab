@@ -27,7 +27,7 @@ export default function StepFlow() {
           </div>
           <h3 className="text-[#12141D] text-xl md:text-[24px] font-semibold mt-4 md:mt-6">Step 1</h3>
           <p className="text-[#767676] text-sm md:text-[16px] mt-2 md:mt-3 max-w-md">
-            Ensuring data accuracy is crucial for making informed decisions and ensuring the reliability.
+            Download the smerp app from respective app store or create a free account on our web app
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function StepFlow() {
           </div>
           <h3 className="text-[#12141D] text-xl md:text-[24px] font-semibold mt-4 md:mt-6">Step 2</h3>
           <p className="text-[#767676] text-sm md:text-[16px] mt-2 md:mt-3 max-w-md md:max-w-xl">
-            Ensuring data accuracy is crucial for making informed decisions and ensuring the reliability.
+            Provide relevant information or preview transaction details by creating or joining transactions respectively.
           </p>
         </div>
 
@@ -69,7 +69,7 @@ export default function StepFlow() {
           </div>
           <h3 className="text-[#12141D] text-xl md:text-[24px] font-semibold mt-4 md:mt-6">Step 3</h3>
           <p className="text-[#767676] text-sm md:text-[16px] mt-2 md:mt-3 max-w-md">
-            Ensuring data accuracy is crucial for making informed decisions and ensuring the reliability.
+            Fund wallet, track transaction progress, confirm delivery and make withdrawals.
           </p>
         </div>
 
