@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         {/* Product */}
-        <div className="text-center sm:text-left">
+        <div className="text-left">
           <h3 className="font-bold text-[18px] sm:text-[20px] mb-4">Product</h3>
           <ul className="space-y-2 text-[#A19EC2] text-[16px] sm:text-[18px]">
             <li><Link to="/bulkwave" onClick={scrollToTop}>Bulkwave</Link></li>
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* Company */}
-        <div className="text-center sm:text-left">
+        <div className="text-left">
           <h3 className="font-bold text-[18px] sm:text-[20px] mb-4">Company</h3>
           <ul className="space-y-2 text-[#A19EC2] text-[16px] sm:text-[18px]">
             <li><Link to="/about-us" onClick={scrollToTop}>About Us</Link></li>
@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="text-center sm:text-left">
+        <div className="text-left">
           <h3 className="font-bold text-[18px] sm:text-[20px] mb-4">Contact Us</h3>
 
           <div className="flex items-center sm:items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] mb-4">
@@ -86,12 +86,12 @@ export default function Footer() {
             <a href="mailto:hello@thefifthlab.com">hello@thefifthlab.com</a>
           </div>
 
-          <div className="flex items-center sm:items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] mb-4">
+          <div className="flex sm:items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] mb-4">
             <Phone size={18} />
             <a href="tel:+2348162352009">+234 816 235 2009</a>
           </div>
 
-          <div className="flex items-start justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] leading-snug">
+          <div className="flex justify-center sm:justify-start gap-3 text-[#A19EC2] text-[16px] sm:text-[18px] leading-snug">
             <MapPin className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" />
             <a 
               href="https://maps.google.com/?q=7+Joshua+Ebun+Ojo+Cl,+Lekki+Phase+1,+Lagos"

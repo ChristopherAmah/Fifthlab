@@ -48,7 +48,7 @@ export default function StepFlow() {
           </div>
           <h3 className="text-[#12141D] text-xl md:text-[24px] font-semibold mt-4 md:mt-6">Step 2</h3>
           <p className="text-[#767676] text-sm md:text-[16px] mt-2 md:mt-3 max-w-md md:max-w-xl">
-            et up your customers and items to generate accurate invoices, receipts, and transaction records instantly.
+            Set up your customers and items to generate accurate invoices, receipts, and transaction records instantly.
           </p>
         </div>
 
