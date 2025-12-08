@@ -9,7 +9,7 @@ const Beetvas = () => {
     <div className="relative">
       {/* Faint repeating background */}
       <div
-        className="absolute inset-0 w-full h-full opacity-5"
+        className="absolute inset-0 w-full h-full opacity-3"
         style={{
           backgroundImage: `url(${background})`,
           backgroundRepeat: 'repeat',

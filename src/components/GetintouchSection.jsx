@@ -89,7 +89,7 @@ The user agreed to the Terms & Conditions and Privacy Policy by submitting this 
       <img
         src={background}
         alt="background"
-        className="absolute inset-0 w-full h-full object-cover opacity-5"
+        className="absolute inset-0 w-full h-full object-cover opacity-3"
       />
 
       {/* Get In Touch Header */}
