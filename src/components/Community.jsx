@@ -15,19 +15,30 @@ export default function JoinCommunity() {
           </h2>
 
           {/* Input + Button */}
-          <div className="mt-8 sm:mt-10 w-full max-w-md mx-auto md:mx-0 flex flex-row sm:flex-row border-2 border-white rounded-[10px] sm:p-2 bg-black gap-3 sm:gap-0">
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              className="grow px-4 py-3 bg-transparent text-white placeholder-white text-[15px] sm:text-[16px] focus:outline-none"
-            />
+          <div className="mt-8 sm:mt-10 w-full max-w-md mx-auto md:mx-0 
+  flex flex-row 
+  border-2 border-white rounded-[10px] 
+  p-1 sm:p-2 bg-black gap-2 sm:gap-0">
 
-            <a href="mailto:hello@thefifthlab.com">
-              <button className="bg-white text-[#08B6D8] font-medium px-4 sm:px-6 sm:py-3 rounded-md hover:bg-gray-200 transition">
-                Join Now
-              </button>
-            </a>
-          </div>
+  <input
+    type="email"
+    placeholder="Enter your email address"
+    className="grow min-w-0 px-3 sm:px-4 py-2.5 sm:py-3 
+    bg-transparent text-white placeholder-white 
+    text-[13px] sm:text-[16px] focus:outline-none"
+  />
+
+  <a href="mailto:hello@thefifthlab.com" className="shrink-0">
+    <button className="bg-white text-[#08B6D8] font-medium 
+    px-3 sm:px-6 py-2.5 sm:py-3 
+    text-[13px] sm:text-[16px]
+    rounded-md hover:bg-gray-200 transition whitespace-nowrap">
+      Join Now
+    </button>
+  </a>
+
+</div>
+
         </div>
 
         {/* RIGHT IMAGE */}
