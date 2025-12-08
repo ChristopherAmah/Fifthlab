@@ -31,7 +31,7 @@ const KuleanPaySection = () => {
           {/* CTA */}
           <div className="mt-4 sm:mt-5">
             <a 
-              href="#" 
+              href="https://bulkwave.ng/" 
               className="inline-flex items-center text-lg sm:text-[19.65px] 
                          font-medium text-[#00B4D8] transition"
             >

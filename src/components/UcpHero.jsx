@@ -30,7 +30,7 @@ const UCPSection = () => {
           {/* Call to Action */}
           <div className="mt-4 sm:mt-5">
             <a 
-              href="#" 
+              href="https://cooplatform.com.ng/" 
               className="inline-flex items-center text-base sm:text-lg md:text-[19.65px] font-medium text-[#00B4D8] transition duration-150 ease-in-out"
             >
               Visit Website

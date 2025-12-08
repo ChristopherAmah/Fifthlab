@@ -113,12 +113,13 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left text-[#6F6C90] text-[14px] sm:text-[16px]">
 
         <p className="mb-3 md:mb-0">
-          Copyright © 2024 Fifthlab
+          Copyright © {new Date().getFullYear()} Fifthlab
         </p>
+
 
         <p>
           All Rights Reserved | 
-          <Link to="/terms" className="ml-1 underline text-white" onClick={scrollToTop}>Terms and Conditions</Link> |
+          <Link to="/cookie-policy" className="ml-1 underline text-white" onClick={scrollToTop}>Cookie Policy</Link> |
           <Link to="/privacy-policy" className="ml-1 underline text-white" onClick={scrollToTop}>Privacy Policy</Link>
         </p>
       </div>

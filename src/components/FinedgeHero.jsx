@@ -44,7 +44,7 @@ const FinEdgeSection = () => {
           {/* Call To Action */}
           <div className="mt-4 sm:mt-5">
             <a
-              href="#"
+              href="https://finedgesoftware.com/"
               className="inline-flex items-center 
               text-[16px] sm:text-lg md:text-[19.65px] 
               font-medium text-[#00B4D8] transition"

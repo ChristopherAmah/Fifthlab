@@ -1,6 +1,6 @@
 import React from 'react';
 import background from '../assets/background.png';
-import PrivacyPolicy from '../components/PrivacyPolicy';
+import CookiePolicy from '../components/CookiePolicy';
 
 const About = () => {
   return (
@@ -18,7 +18,7 @@ const About = () => {
 
       {/* Page content */}
       <div className="relative z-10">
-        <PrivacyPolicy />
+        <CookiePolicy />
       </div>
 
       {/* Responsive adjustments */}

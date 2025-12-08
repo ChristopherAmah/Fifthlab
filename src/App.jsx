@@ -18,6 +18,7 @@ import Beetvas from "./pages/Beetvas";
 import ArticlePage from "./pages/ArticlePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from './ScrollToTop';
+import CookiePolicy from "./pages/CookiePolicy";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/beetvas" element={<Beetvas />} />
         <Route path="/article/:id" element={<ArticlePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
 
         {/* Catch-all route */}
         <Route path="*" element={<Navigate to="/" replace />} />
