@@ -33,13 +33,14 @@ const KuleanPaySection = () => {
           {/* CTA */}
           <div className="mt-4 sm:mt-5">
             <a 
-              href="#" 
+              href="mailto:hello@thefifthlab.com" 
               className="inline-flex items-center text-lg sm:text-[19.65px] 
-                         font-medium text-[#00B4D8] transition"
+                        font-medium text-[#00B4D8] transition"
             >
-              Visit Website
+              Schedule A Demo
               <MdOutlineArrowOutward className="ml-2 sm:ml-4 text-xl sm:text-[24px]" />
             </a>
+
           </div>
         </div>
 

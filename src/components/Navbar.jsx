@@ -243,7 +243,7 @@ export default function Navbar() {
         </div>
 
         {/* Menu Links Container */}
-        <div className="flex flex-col flex-grow px-4">
+        <div className="flex flex-col grow px-4">
             {/* Primary Links */}
             <Link 
               to="/" 
