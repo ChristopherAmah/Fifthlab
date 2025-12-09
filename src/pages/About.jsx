@@ -4,6 +4,7 @@ import WhoWeAre from '../components/WhoWeAre';
 import MissionVision from '../components/MissionVision';
 import WhatWeDo from '../components/WhatWeDo';
 import Foundation from '../components/Foundation';
+import Organogram from '../components/Organogram';
 import background from '../assets/background.png';
 
 const About = () => {
@@ -27,6 +28,7 @@ const About = () => {
         <MissionVision />
         <WhatWeDo />
         <Foundation />
+        <Organogram />
       </div>
 
       {/* Responsive adjustments */}
