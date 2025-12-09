@@ -7,7 +7,7 @@ const WhatWeDoSection = () => {
   return (
     <section className="py-8 md:py-20 px-4 md:px-8 lg:px-[120px]">
       <div className="mx-auto">
-        <h2 className="text-4xl md:text-[54px] text-center font-medium text-[#03045E] leading-tight mb-8 md:mb-[54px]">
+        <h2 className="text-3xl sm:text-4xl md:text-[54px] text-center font-medium text-[#03045E] leading-tight mb-8 md:mb-[54px]">
               What We Do ?
             </h2>
         
@@ -15,7 +15,7 @@ const WhatWeDoSection = () => {
         <div className="flex flex-col lg:flex-row justify-between mb-10">
           {/* Left Column: Main Heading and Text (Starts at the top by default) */}
           <div className="lg:w-1/2">
-            <p className="text-[20px] text-[#596780] mb-6">
+            <p className="text-base sm:text-lg text-[20px] text-[#596780] mb-6">
               We bridge the gap between technology and people, 
               offering dynamic solutions to business and everyday 
               challenges, simplifying operations along the way. Our 
@@ -27,7 +27,7 @@ const WhatWeDoSection = () => {
           {/* Right Column: Emphasized Quote/Statement */}
           {/* 👇 Change `items-center` to `items-start` */}
           <div className="lg:w-2/3 flex items-start">
-            <p className="text-[20px] text-[#00B4D8] max-w-md ms-auto py-2">
+            <p className="text-base sm:text-lg text-[20px] text-[#00B4D8] max-w-md ms-auto py-2">
               With years of research focusing on solving 
               problems with people and businesses in mind, 
               we're committed to delivering a premium user 
