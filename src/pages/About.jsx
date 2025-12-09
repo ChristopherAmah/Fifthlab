@@ -3,7 +3,7 @@ import AboutHero from '../components/AboutHero';
 import WhoWeAre from '../components/WhoWeAre';
 import MissionVision from '../components/MissionVision';
 import WhatWeDo from '../components/WhatWeDo';
-import Team from '../components/Team';
+import Foundation from '../components/Foundation';
 import background from '../assets/background.png';
 
 const About = () => {
@@ -26,7 +26,7 @@ const About = () => {
         <WhoWeAre />
         <MissionVision />
         <WhatWeDo />
-        <Team />
+        <Foundation />
       </div>
 
       {/* Responsive adjustments */}
