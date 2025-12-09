@@ -12,11 +12,11 @@ const OurFoundation = () => {
 
         {/* Scrollable Content */}
         <div className="overflow-x-auto">
-          <div className="min-w-[600px] md:min-w-full">
+          <div className="w-[1200px] md:w-full">
             <img
               src={org}
               alt="Organogram"
-              className="w-full h-auto object-contain"
+              className="w-full h-auto"
             />
           </div>
         </div>
