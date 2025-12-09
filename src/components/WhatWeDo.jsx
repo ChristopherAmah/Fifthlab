@@ -6,7 +6,7 @@ import buscustomer from '../assets/buscustomer.jpg';
 const WhatWeDoSection = () => {
   return (
     <section className="py-8 md:py-20 px-4 md:px-8 lg:px-[120px]">
-      <div className="mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl md:text-[54px] text-center font-medium text-[#03045E] leading-tight mb-8 md:mb-[54px]">
               What We Do ?
             </h2>

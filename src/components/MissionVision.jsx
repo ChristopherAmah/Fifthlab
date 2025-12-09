@@ -5,7 +5,7 @@ import vision from '../assets/vision.jpg';
 const MissionVisionSection = () => {
   return (
     <section className="py-16 px-4 sm:px-6 md:px-8 lg:px-28">
-      <div className="mx-auto flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-stretch justify-center gap-8 lg:gap-12">
         
         {/* Mission Card */}
         <div className="w-full lg:w-1/2">
