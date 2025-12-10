@@ -19,6 +19,7 @@ import ArticlePage from "./pages/ArticlePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ScrollToTop from './ScrollToTop';
 import CookiePolicy from "./pages/CookiePolicy";
+import CookiePopup from "./components/CookiePopup";
 
 function App() {
   return (
@@ -48,6 +49,8 @@ function App() {
       
       <Community />
       <Footer />
+
+      <CookiePopup />
     </>
   )
 }
