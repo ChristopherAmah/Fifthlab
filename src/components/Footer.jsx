@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-import ndpr from "../assets/ndpr.png";
+import ndpr24 from "../assets/ndpr24.png";
 import darklogo from "../assets/darklogo.png";
 
 export default function Footer() {
@@ -44,7 +44,7 @@ export default function Footer() {
           <div className="flex justify-center sm:justify-start mt-6">
             <a href="#" target="_blank" rel="noopener noreferrer">
               <img 
-                src={ndpr} 
+                src={ndpr24} 
                 alt="NDPR Audit" 
                 className="h-[90px] sm:h-[110px]"
               />
