@@ -87,7 +87,7 @@ const SolutionCard = ({
         </>
       ) : (
         <>
-          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[400px] mb-4 sm:mb-6 w-40 md:max-w-xs mx-auto">
+          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[400px] mb-4 sm:mb-6 max-w-xs mx-auto">
             {showTopHalf ? (
               <img src={mockupImage} alt={mockupAlt} className="w-full h-auto object-cover rounded-xl"/>
             ) : (
