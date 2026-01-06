@@ -1,6 +1,6 @@
 import React from 'react';
 import beetvaslogo from '../assets/beetvaslogo.png';
-import beetvasphone from '../assets/bulkphone.png';
+import beetvasphone from '../assets/beetvasphone.png';
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 const KuleanPaySection = () => {

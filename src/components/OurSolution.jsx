@@ -51,7 +51,7 @@ const SolutionCard = ({
             {/* Button uses Link component with linkUrl */}
             <Link 
               to={linkUrl} 
-              className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[38px]"
+              className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200"
             >
               {buttonText}
               <MdOutlineArrowOutward className='ml-2'/>
@@ -60,17 +60,17 @@ const SolutionCard = ({
             <div
               className={`relative overflow-hidden max-w-full mx-auto
                 ${title === "Unified Cooperative Platform (UCP)"
-                  ? "h-[350px] sm:h-[520px] lg:h-[400px]"
-                  : "h-[180px] sm:h-[250px] lg:h-[400px]"}${mockupClass}`}
+                  ? "h-[350px] sm:h-[520px] lg:h-[420px]"
+                  : "h-[180px] sm:h-[250px] lg:h-[420px]"}${mockupClass}`}
             >
               {showTopHalf ? (
                 <img
                   src={mockupImage}
                   alt={mockupAlt}
-                  className={`w-full object-cover object-top rounded-xl
+                  className={`w-full object-cover rounded-xl
                     ${title === "Unified Cooperative Platform (UCP)"
                       ? "h-[400px] sm:h-[750px]"
-                      : "h-[180px] sm:h-[620px]"}${mockupClass}`}
+                      : "h-[180px] sm:h-[700px]"}${mockupClass}`}
                 />
               ) : (
                 <img
@@ -78,7 +78,7 @@ const SolutionCard = ({
                   alt={mockupAlt}
                   className={`w-full object-cover rounded-xl absolute bottom-0
                     ${title === "Unified Cooperative Platform (UCP)"
-                      ? "h-[400px] sm:h-[750px] scale-95"
+                      ? "h-[400px] sm:h-[750px] scale-95 "
                       : "h-[180px] sm:h-[620px]"}${mockupClass}`}
                 />
               )}
@@ -87,7 +87,7 @@ const SolutionCard = ({
         </>
       ) : (
         <>
-          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[450px] mb-4 sm:mb-6 max-w-xs mx-auto">
+          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[400px] mb-4 sm:mb-6 max-w-xs mx-auto">
             {showTopHalf ? (
               <img src={mockupImage} alt={mockupAlt} className="w-full h-auto object-cover object-top rounded-xl"/>
             ) : (
@@ -104,7 +104,7 @@ const SolutionCard = ({
           {/* Button uses Link component with linkUrl */}
           <Link 
             to={linkUrl} 
-            className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4 sm:mb-[38px]"
+            className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200"
           >
             {buttonText}
             <MdOutlineArrowOutward className='ml-2'/>
