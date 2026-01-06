@@ -51,7 +51,7 @@ const SolutionCard = ({
             {/* Button uses Link component with linkUrl */}
             <Link 
               to={linkUrl} 
-              className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200"
+              className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4"
             >
               {buttonText}
               <MdOutlineArrowOutward className='ml-2'/>
@@ -87,9 +87,9 @@ const SolutionCard = ({
         </>
       ) : (
         <>
-          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[400px] mb-4 sm:mb-6 max-w-xs mx-auto">
+          <div className="relative overflow-hidden h-[180px] sm:h-[250px] lg:h-[400px] mb-4 sm:mb-6 w-40 md:max-w-xs mx-auto">
             {showTopHalf ? (
-              <img src={mockupImage} alt={mockupAlt} className="w-full h-auto object-cover object-top rounded-xl"/>
+              <img src={mockupImage} alt={mockupAlt} className="w-full h-auto object-cover rounded-xl"/>
             ) : (
               <img src={mockupImage} alt={mockupAlt} className="w-full h-auto object-cover rounded-xl absolute bottom-0"/>
             )}
@@ -104,7 +104,7 @@ const SolutionCard = ({
           {/* Button uses Link component with linkUrl */}
           <Link 
             to={linkUrl} 
-            className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200"
+            className="inline-flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-[18px] font-semibold rounded-[36.65px] text-white bg-[#0E0E0E] hover:bg-gray-800 transition-colors duration-200 mb-4"
           >
             {buttonText}
             <MdOutlineArrowOutward className='ml-2'/>
