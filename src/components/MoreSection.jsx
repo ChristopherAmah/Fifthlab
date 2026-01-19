@@ -1,34 +1,52 @@
-import React from 'react';
-import access from '../assets/access.png';
-import bankly from '../assets/bankly.png';
-import uba from '../assets/uba.png';
-import trustbanck from '../assets/trustbanc.png';
-import wema from '../assets/wema.png';
-import stanbic from '../assets/stanbic.png';
-import itex from '../assets/itex.png';
-import firstbank from '../assets/firstbank.png';
-import morebg from '../assets/morebg.png';
-import remita from '../assets/remita.webp';
-import providus from '../assets/providus.png';
-import covenant from '../assets/covenant.png';
-import npf from '../assets/npf.png';
-import firs from '../assets/firs.png';
+import React from "react";
+import { motion } from "framer-motion";
+
+import access from "../assets/access.png";
+import bankly from "../assets/bankly.png";
+import uba from "../assets/uba.png";
+import trustbanck from "../assets/trustbanc.png";
+import wema from "../assets/wema.png";
+import stanbic from "../assets/stanbic.png";
+import itex from "../assets/itex.png";
+import firstbank from "../assets/firstbank.png";
+import morebg from "../assets/morebg.png";
+import remita from "../assets/remita.webp";
+import providus from "../assets/providus.png";
+import covenant from "../assets/covenant.png";
+import npf from "../assets/npf.png";
+import firs from "../assets/firs.png";
+
+/* ---------------- ANIMATION VARIANTS ---------------- */
+const fadeUp = {
+  hidden: { opacity: 0, y: 80 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -80 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 80 },
+  visible: { opacity: 1, x: 0 },
+};
 
 const ImpactSection = () => {
   const logos = [
-    { src: access, alt: 'Access Bank' },
-    { src: bankly, alt: 'Bankly' },
-    { src: firstbank, alt: 'FirstBank' },
-    { src: itex, alt: 'Itex' },
-    { src: stanbic, alt: 'Stanbic Bank' },
-    { src: wema, alt: 'Wema Bank' },
-    { src: trustbanck, alt: 'TrustBanc' },
-    { src: remita, alt: 'Remita' },
-    { src: providus, alt: 'Providus' },
-    { src: covenant, alt: 'Covenant mfb' },
-    { src: npf, alt: 'Nigeria Police Force mfb' },
-    { src: firs, alt: 'FIRS mfb' },
-    { src: uba, alt: 'UBA' },
+    { src: access, alt: "Access Bank" },
+    { src: bankly, alt: "Bankly" },
+    { src: firstbank, alt: "FirstBank" },
+    { src: itex, alt: "Itex" },
+    { src: stanbic, alt: "Stanbic Bank" },
+    { src: wema, alt: "Wema Bank" },
+    { src: trustbanck, alt: "TrustBanc" },
+    { src: remita, alt: "Remita" },
+    { src: providus, alt: "Providus" },
+    { src: covenant, alt: "Covenant mfb" },
+    { src: npf, alt: "Nigeria Police Force mfb" },
+    { src: firs, alt: "FIRS mfb" },
+    { src: uba, alt: "UBA" },
   ];
 
   return (
@@ -38,14 +56,14 @@ const ImpactSection = () => {
     >
       <div className="relative z-10">
 
-        {/* ✅ AUTO-SCROLLING LOGOS */}
+        {/* 🔵 AUTO-SCROLLING LOGOS */}
         <div className="overflow-hidden bg-[#EDEDEDB2] mb-4">
           <div className="flex w-max animate-scroll gap-x-10">
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={index}
                 className="h-10 flex items-center py-12"
-                style={{ minWidth: '3rem' }}
+                style={{ minWidth: "3rem" }}
               >
                 <img
                   src={logo.src}
@@ -57,54 +75,83 @@ const ImpactSection = () => {
           </div>
         </div>
 
-        {/* ✅ MAIN CONTENT GRID — UNTOUCHED */}
+        {/* 🔵 MAIN CONTENT GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 px-8 sm:px-[84.97px] pb-[51.1px] gap-y-[28.56px]">
 
-          <div className="flex flex-col justify-start py-6">
+          {/* Be more */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col justify-start py-6"
+          >
             <h1
               className="text-5xl font-medium text-black sm:text-[121.44px]"
               style={{ lineHeight: 1.1 }}
             >
               Be<br />more
             </h1>
-          </div>
+          </motion.div>
 
-          <div>
+          {/* Blue card */}
+          <motion.div
+            variants={fadeRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.15 }}
+          >
             <div className="bg-[#0090AD] text-white rounded-[66.42px] h-full flex items-center justify-center">
               <p className="text-base text-center font-normal py-8 px-6 sm:text-[32px] sm:py-12 sm:px-12">
-                Live your best life, create more and multiply your impact with the tools and solutions we provide.
+                Live your best life, create more and multiply your impact with
+                the tools and solutions we provide.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div>
+          {/* Light card */}
+          <motion.div
+            variants={fadeLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <div className="bg-[#E6F8FB] text-[#121212] rounded-[66.42px] h-full flex items-center justify-center">
               <p className="text-base text-center font-normal py-8 px-6 sm:text-[26px] sm:py-12 sm:px-12">
-                The reward for a great idea is the tools to make it happen. We provide you with financial and operational tools that help you do business differently and with ease.
+                The reward for a great idea is the tools to make it happen. We
+                provide you with financial and operational tools that help you
+                do business differently and with ease.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col justify-end items-end">
+          {/* Do more */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.25 }}
+            className="flex flex-col justify-end items-end"
+          >
             <h1 className="text-5xl font-medium text-[#000000] leading-none sm:text-[133.61px]">
-              Do<br /><span className="text-[#15949B]">more</span>
+              Do<br />
+              <span className="text-[#15949B]">more</span>
             </h1>
-          </div>
+          </motion.div>
 
         </div>
-
       </div>
 
-      {/* ✅ SCROLL ANIMATION STYLE */}
+      {/* 🔵 LOGO SCROLL KEYFRAMES */}
       <style>
         {`
           @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
           }
 
           .animate-scroll {

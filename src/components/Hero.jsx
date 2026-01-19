@@ -11,6 +11,26 @@ import smerphero from "../assets/smerphero.png";
 import beetvashero from "../assets/beetvashero.png";
 import smerpgohero from "../assets/smerpgohero.png";
 
+/* ---------------- TEXT ANIMATION VARIANTS ---------------- */
+const textVariants = {
+  fromTop: {
+    hidden: { opacity: 0, y: -60 },
+    visible: { opacity: 1, y: 0 },
+  },
+  fromBottom: {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0 },
+  },
+  fromLeft: {
+    hidden: { opacity: 0, x: -80 },
+    visible: { opacity: 1, x: 0 },
+  },
+  fromRight: {
+    hidden: { opacity: 0, x: 80 },
+    visible: { opacity: 1, x: 0 },
+  },
+};
+
 export default function HeroSection() {
   const images = [
     smerphero,
@@ -22,7 +42,6 @@ export default function HeroSection() {
     smerpgohero,
   ];
 
-  // Define the links corresponding to each image
   const links = [
     "/smerp",
     "/kuleanpay",
@@ -33,14 +52,13 @@ export default function HeroSection() {
     "/smerpgo",
   ];
 
-  // Duplicate for infinite loop
   const loopedImages = [...images, ...images, ...images];
 
   const [offset, setOffset] = useState(0);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const getCardSize = () => {
-    let cardWidth = 180; // Default for small screens
+    let cardWidth = 180;
     let cardGap = 20;
 
     if (screenWidth >= 1024) {
@@ -95,7 +113,8 @@ export default function HeroSection() {
           }}
         >
           {loopedImages.map((img, index) => {
-            const itemCenter = index * itemWidthWithGap + itemWidthWithGap / 2 - offset;
+            const itemCenter =
+              index * itemWidthWithGap + itemWidthWithGap / 2 - offset;
             const distance = itemCenter - screenCenter;
             let normalizedDistance = distance / maxDistanceFromCenter;
             normalizedDistance = Math.max(-1, Math.min(1, normalizedDistance));
@@ -120,7 +139,7 @@ export default function HeroSection() {
                   <img
                     src={img}
                     alt={`hero-${index}`}
-                    className={`w-[${cardWidth}px] h-auto object-contain`}
+                    className="h-auto object-contain"
                     style={{ width: `${cardWidth}px` }}
                   />
                 </Link>
@@ -132,26 +151,62 @@ export default function HeroSection() {
 
       {/* 🔵 TEXT CONTENT */}
       <div className="relative z-10 max-w-4xl mx-auto mt-50 sm:mt-50 md:mt-70 mb-20">
-        <h1 className="text-3xl sm:text-4xl md:text-[62px] font-medium text-[#0E0E0E] mb-6">
-          Building the Future of <br className="hidden sm:inline" /> Integrated Solutions.
-        </h1>
 
-        <p className="text-base sm:text-lg md:text-[23px] text-[#5F5F7A] mb-8 max-w-2xl mx-auto">
-          Empowering Your Business Growth With User-Centric Solutions that make life and business easy.
-        </p>
+        {/* Heading */}
+        <motion.h1
+          variants={textVariants.fromTop}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl sm:text-4xl md:text-[62px] font-medium text-[#0E0E0E] mb-6"
+        >
+          Building the Future of <br className="hidden sm:inline" /> Integrated
+          Solutions.
+        </motion.h1>
 
+        {/* Paragraph */}
+        <motion.p
+          variants={textVariants.fromBottom}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+          className="text-base sm:text-lg md:text-[23px] text-[#5F5F7A] mb-8 max-w-2xl mx-auto"
+        >
+          Empowering Your Business Growth With User-Centric Solutions that make
+          life and business easy.
+        </motion.p>
+
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a href="#solutions">
+
+          <motion.a
+            href="#solutions"
+            variants={textVariants.fromLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             <button className="px-6 sm:px-8 py-3 bg-[#00B4D8] text-white font-semibold rounded-full text-[16px] sm:text-[18px] hover:bg-cyan-600 transition duration-300">
               See Our Solutions
             </button>
-          </a>
+          </motion.a>
 
-          <a href="mailto:hello@thefifthlab.com">
+          <motion.a
+            href="mailto:hello@thefifthlab.com"
+            variants={textVariants.fromRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <button className="px-6 sm:px-8 py-3 text-[#000000] font-bold text-[16px] sm:text-[18px] cursor-pointer hover:rounded-full hover:bg-cyan-50 transition duration-300 flex items-center gap-2">
               Book A Demo <span className="font-bold text-[18px]">&rarr;</span>
             </button>
-          </a>
+          </motion.a>
+
         </div>
       </div>
     </section>
