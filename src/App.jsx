@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
-import "./App.css";
-import Navbar from "./components/Navbar";
+import React, { useState } from "react";
+import { Route, Routes, Navigate } from 'react-router-dom'
+import './App.css'
+import Navbar from './components/Navbar'
 import Footer from "./components/Footer";
 import Community from "./components/Community";
 import Home from "./pages/Home";
@@ -17,37 +17,18 @@ import Smerpgo from "./pages/Smerpgo";
 import Beetvas from "./pages/Beetvas";
 import ArticlePage from "./pages/ArticlePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import ScrollToTop from "./ScrollToTop";
+import ScrollToTop from './ScrollToTop';
 import GoogleAnalyticsTracker from "./GoogleAnalyticsTracker";
 import CookiePolicy from "./pages/CookiePolicy";
 import CookiePopup from "./components/CookiePopup";
 
 function App() {
-
-  useEffect(() => {
-    // Load GA script
-    const script = document.createElement("script");
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-QW0BMQE9C8";
-    script.async = true;
-    document.head.appendChild(script);
-
-    // Initialize GA
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    window.gtag = gtag;
-
-    gtag("js", new Date());
-    gtag("config", "G-QW0BMQE9C8");
-  }, []);
-
   return (
     <>
       <ScrollToTop />
       <GoogleAnalyticsTracker />
       <Navbar />
-
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<About />} />
@@ -64,14 +45,16 @@ function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy />} />
 
+        {/* Catch-all route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-
+      
       <Community />
       <Footer />
+
       <CookiePopup />
     </>
-  );
+  )
 }
 
-export default App;
+export default App

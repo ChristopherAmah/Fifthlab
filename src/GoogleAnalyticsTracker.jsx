@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const GoogleAnalyticsTracker = () => {
+const GA_MEASUREMENT_ID = "G-RFNB0M5X7Q"; // <-- NEW ID
+
+const AnalyticsTracker = () => {
   const location = useLocation();
 
   useEffect(() => {
     if (window.gtag) {
-      window.gtag("config", "G-QW0BMQE9C8", {
-        page_path: location.pathname,
+      window.gtag("config", GA_MEASUREMENT_ID, {
+        page_path: location.pathname + location.search,
       });
     }
   }, [location]);
@@ -15,4 +17,4 @@ const GoogleAnalyticsTracker = () => {
   return null;
 };
 
-export default GoogleAnalyticsTracker;
+export default AnalyticsTracker;
