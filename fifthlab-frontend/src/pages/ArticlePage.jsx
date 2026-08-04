@@ -3,7 +3,7 @@ import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import background from '../assets/background.png';
 import logo from '../assets/logo.png';
 
-const API_BASE = import.meta.env.VITE_STRAPI_API_URL || 'http://localhost:1337';
+const API_BASE = import.meta.env.VITE_STRAPI_API_URL || 'https://fifthlab.onrender.com';
 
 function createMarkup(htmlContent) {
   return { __html: `<div class="prose max-w-none">${htmlContent}</div>` };

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const API_BASE = import.meta.env.VITE_STRAPI_API_URL || 'http://localhost:1337';
+const API_BASE = import.meta.env.VITE_STRAPI_API_URL || 'https://fifthlab.onrender.com';
 
 const defaultMeta = {
   title: 'Fifthlab: Ecosystem of Solutions that work',

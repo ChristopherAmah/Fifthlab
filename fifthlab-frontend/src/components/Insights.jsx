@@ -7,7 +7,7 @@ import { BsArrowUpRight } from 'react-icons/bs';
 import { Link, useNavigate } from 'react-router-dom';
 import defaultImage from '../assets/insights.jpg';
 
-const API_BASE = import.meta.env.VITE_STRAPI_API_URL || 'http://localhost:1337';
+const API_BASE = import.meta.env.VITE_STRAPI_API_URL || 'https://fifthlab.onrender.com';
 
 const getStrapiAttributes = (entry) => entry?.attributes || entry || {};
 
