@@ -21,10 +21,12 @@ import ScrollToTop from './ScrollToTop';
 import GoogleAnalyticsTracker from "./GoogleAnalyticsTracker";
 import CookiePolicy from "./pages/CookiePolicy";
 import CookiePopup from "./components/CookiePopup";
+import SeoManager from "./components/SeoManager";
 
 function App() {
   return (
     <>
+      <SeoManager />
       <ScrollToTop />
       <GoogleAnalyticsTracker />
       <Navbar />

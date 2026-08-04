@@ -2,21 +2,36 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import insights from "../assets/insights.jpg";
 
-// ✅ Extract first image from Medium HTML content
-const extractImageFromContent = (html) => {
-  if (!html) return null;
-  const div = document.createElement("div");
-  div.innerHTML = html;
-  const img = div.querySelector("img");
-  return img?.getAttribute("src") || img?.getAttribute("data-src") || null;
+const API_BASE = import.meta.env.VITE_STRAPI_API_URL || "http://localhost:1337";
+const CATEGORY_OPTIONS = ["All", "Fintech", "Solutions", "Others"];
+
+const normalizeCategory = (name) => {
+  if (!name) return "Others";
+  const normalized = name.trim().toLowerCase();
+  if (normalized === "finance" || normalized === "fintech") return "Fintech";
+  if (normalized === "solutions") return "Solutions";
+  return "Others";
 };
 
-// ✅ Capitalize first letter of each word
 const capitalizeWords = (str) =>
   str
     .split(" ")
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
+
+const getArticleTitle = (attrs = {}) =>
+  attrs.title || attrs.Text || attrs.Title || "Untitled article";
+
+const getStrapiAttributes = (entry) => entry?.attributes || entry || {};
+
+const getMediaUrl = (media, fallback = null) => {
+  if (!media) return fallback;
+  if (typeof media === 'string') return media;
+  if (media?.data?.attributes?.url) return `${API_BASE}${media.data.attributes.url}`;
+  if (media?.attributes?.url) return `${API_BASE}${media.attributes.url}`;
+  if (media?.url) return media.url.startsWith('http') ? media.url : `${API_BASE}${media.url}`;
+  return fallback;
+};
 
 const POSTS_PER_PAGE = 6; // change if needed
 
@@ -24,52 +39,51 @@ const InsightsSection = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [categories, setCategories] = useState(["All"]);
   const [currentPage, setCurrentPage] = useState(1);
   
-  // 💡 NEW STATE FOR SEARCH
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearchVisible, setIsSearchVisible] = useState(false);
 
   const navigate = useNavigate();
 
-  // ✅ FETCH MEDIUM POSTS
   useEffect(() => {
     setLoading(true);
-    fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@thefifthlab"
-    )
+
+    fetch(`${API_BASE}/api/articles?populate=*&sort=createdAt:desc&pagination[page]=1&pagination[pageSize]=100`)
       .then((res) => res.json())
       .then((data) => {
-        const mapped = data.items.map((item) => {
-          const urlParts = item.guid.split("/");
-          const cleanId = urlParts[urlParts.length - 1];
+        if (!data?.data) {
+          setPosts([]);
+          return;
+        }
 
-          const resolvedImage =
-            item.thumbnail || extractImageFromContent(item.content) || null;
+        const mapped = data.data.map((article) => {
+          const attrs = getStrapiAttributes(article);
+          const coverUrl = getMediaUrl(attrs.cover, insights);
+          const categoryName = normalizeCategory(
+            attrs.category?.data?.attributes?.name || attrs.category?.name || attrs.category
+          );
 
           return {
-            id: cleanId,
-            category: item.categories?.[0] || "Others",
-            titleMain: item.title.split(":")[0],
-            titleSub: item.title.split(":")[1] || "",
-            link: item.link,
-            description: item.description.replace(/<[^>]*>?/gm, ""),
-            date: new Date(item.pubDate).toDateString(),
-            pubDate: item.pubDate,
-            image: resolvedImage,
-            content: item.content,
+            id: attrs.id || attrs.slug || article.id,
+            slug: attrs.slug || article.id,
+            titleMain: getArticleTitle(attrs),
+            titleSub: attrs.subtitle || "",
+            link: `/article/${attrs.slug || article.id}`,
+            description: attrs.description || "",
+            date: new Date(attrs.updatedAt || attrs.createdAt || Date.now()).toDateString(),
+            pubDate: attrs.publishedAt || attrs.updatedAt || attrs.createdAt || new Date().toISOString(),
+            image: coverUrl,
+            category: categoryName,
+            blocks: attrs.blocks || [],
+            content: attrs.description || "",
           };
         });
 
         setPosts(mapped);
-
-        // ✅ Extract unique categories dynamically
-        const uniqueCategories = [
-          "All",
-          ...Array.from(new Set(mapped.map((p) => p.category))),
-        ];
-        setCategories(uniqueCategories);
+      })
+      .catch(() => {
+        setPosts([]);
       })
       .finally(() => setLoading(false));
   }, []);
@@ -119,11 +133,10 @@ const InsightsSection = () => {
   
   // 💡 SEARCH HANDLER
   const handleSearchToggle = () => {
-      setIsSearchVisible(!isSearchVisible);
-      // Optional: Clear search term when closing the input
-      if (isSearchVisible) {
-          setSearchTerm('');
-      }
+    setIsSearchVisible(!isSearchVisible);
+    if (isSearchVisible) {
+      setSearchTerm("");
+    }
   };
 
   return (
@@ -147,26 +160,24 @@ const InsightsSection = () => {
             
 
             {/* CATEGORY BUTTONS */}
-            {categories.map((cat) => (
+            {CATEGORY_OPTIONS.map((cat) => (
               <button
                 key={cat}
                 onClick={() => {
-                    setSelectedCategory(cat);
-                    // Hide search bar if a category is clicked
-                    setIsSearchVisible(false); 
-                    setSearchTerm('');
+                  setSelectedCategory(cat);
+                  setIsSearchVisible(false);
+                  setSearchTerm("");
                 }}
                 className={`px-4 py-2 text-sm rounded-full transition ${
                   selectedCategory === cat && !isSearchVisible
                     ? "bg-black text-white"
                     : "text-gray-600 hover:bg-gray-300"
                 }`}
-                // Hide All button if search bar is open to save space
                 style={{ display: isSearchVisible && cat === "All" ? 'none' : 'inline-block' }}
               >
-                {capitalizeWords(cat)}
+                {cat}
               </button>
-            ))}
+            ))}
 
             {/* SEARCH ICON (NEW) */}
             <button
@@ -200,7 +211,7 @@ const InsightsSection = () => {
         {!loading && featuredPost && (
           <div
             onClick={() =>
-              navigate(`/article/${featuredPost.id}`, { state: featuredPost })
+              navigate(`/article/${featuredPost.slug}`, { state: featuredPost })
             }
             className="md:px-[31.42px] overflow-hidden mb-16 flex flex-col lg:flex-row gap-10 cursor-pointer"
           >
@@ -233,7 +244,7 @@ const InsightsSection = () => {
             (post, index) => (
               <div
                 key={index}
-                onClick={() => navigate(`/article/${post.id}`, { state: post })}
+                onClick={() => navigate(`/article/${post.slug}`, { state: post })}
                 className="rounded-3xl overflow-hidden relative shadow-lg group cursor-pointer"
               >
                 {loading ? (
